@@ -108,3 +108,106 @@ Shared Responsibility Model diagram
 
 - AWS = RESPONSIBILITY FOR THE SECURITY OF THE CLOUD
 - CUSTOMER = RESPONSIBILITY FOR THE SECURITY IN THE CLOUD
+
+#### IAM - Identity and Access Management
+
+- IAM = Identity and Access Management, Global service
+- Root account created by default, shouldn’t be used or shared
+- Users are people within your organization, and can be grouped
+- Groups only contain users, not other groups
+- Users don’t have to belong to a group, and user can belong
+
+IAM: Permissions
+
+- Users or Groups can be assigned JSON documents called policies
+- These policies define the permissions of the users
+- In AWS you apply the least privilege principle: don’t give more permissions than a user needs
+
+IAM Policies Structure
+
+Consists of
+
+- Version: policy language version, always include “2012-10-17”
+- Id: an identifier for the policy (optional)
+- Statement: one or more individual statements (required)
+
+Statements consists of
+
+- Sid: an identifier for the statement (optional)
+- Effect: whether the statement allows or denies access (Allow, Deny)
+- Principal: account/user/role to which this policy applied to
+- Action: list of actions this policy allows or denies
+- Resource: list of resources to which the actions applied to
+- Condition: conditions for when this policy is in effect (optional)
+
+```json
+{
+  "Version": "2012-10-17",
+  "Id": "S3-Account-Permissions",
+  "Statement": [
+    {
+        "Sid": "1",
+      "Effect": "Allow",
+      "Principal":{
+        "AWS":["arn:aws:iam:123456789012:root"]
+      }
+      "Action": "ec2:Describe*",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+To access AWS, you have three options:
+
+- AWS Management Console (protected by password + MFA)
+- AWS Command Line Interface (CLI): protected by access keys
+- AWS Software Developer Kit (SDK) - for code: protected by access keys
+  Access Keys are generated through the AWS Console
+
+The AWS CLI
+
+- A tool that enables you to interact with AWS services using commands in your command-line shell
+- Direct access to the public APIs of AWS services
+
+the AWS SDK
+
+- AWS Software Development Kit (AWS SDK)
+- Language-specific APIs (set of libraries)
+- Enables you to access and manage AWS services programmatically
+- Embedded within your application
+- Supports
+  - SDKs (JavaScript, Python, PHP, .NET, Ruby, Java, Go, Node.js, C++)
+  - Mobile SDKs (Android, iOS, ...)
+  - IoT Device SDKs (Embedded C, Arduino, ...)
+- Example: AWS CLI is built on AWS SDK for Python
+
+IAM Roles for Services
+
+- Some AWS service will need to perform actions on your behalf
+- To do so, we will assign permissions to AWS services
+  with IAM Roles
+- Common roles:
+  - EC2 Instance Roles
+  - Lambda Function Roles
+  - Roles for CloudFormation
+
+IAM Security Tools
+
+- IAM Credentials Report (account-level)
+  1. a report that lists all your account's users and the status of their various credentials
+- IAM Access Advisor (user-level)
+  1. Access advisor shows the service permissions granted to a user and when those services were last accessed.
+  1. You can use this information to revise your policies.
+
+IAM Section – Summary
+
+- Users: mapped to a physical user, has a password for AWS Console
+- Groups: contains users only
+- Policies: JSON document that outlines permissions for users or groups
+- Roles: for EC2 instances or AWS services
+- Security: MFA + Password Policy
+- AWS CLI: manage your AWS services using the command-line
+- AWS SDK: manage your AWS services using a programming language
+- Access Keys: access AWS using the CLI or SDK
+- Audit: IAM Credential Reports & IAM Access Advisor
