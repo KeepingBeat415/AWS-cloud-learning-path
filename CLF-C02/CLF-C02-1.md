@@ -419,3 +419,5 @@ EC2 Section – Summary
 - SSH: start a terminal into our EC2 Instances (port 22)
 - EC2 Instance Role: link to IAM roles
 - Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible), Dedicated Host, Dedicated Instance
+
+### EC2 Instance Storage
