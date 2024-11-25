@@ -1,6 +1,6 @@
 #### Server
 
-What is a server composed of:
+The server composed of:
 
 - Compute: CPU
 - Memory: RAM
@@ -8,19 +8,19 @@ What is a server composed of:
 - Database: Store data in a structured way
 - Network: Routers, switch, DNS server
 
-IT Terminology
+IT Terminology:
 
 - Network: cables, routers and servers connected with each other
-- Router : A networking device that forwards data packets between computer networks. They know where to send your packets on the internet!
+- Router : A networking device that forwards data packets between computer networks. They know where to send your packets on the internet
 - Switch: Takes a packet and send it to the correct server / client on your network Router Switch
 
-What is Cloud Computing:
+Cloud Computing:
 
-- Cloud computing is the on-demand deliver y of compute power, database storage, applications, and other IT resources
+- Cloud computing is the _on-demand_ delivery of compute power, database storage, applications, and other IT resources
 - Through a cloud services platform with pay-as-you-go pricing
 - You can provision exactly the right type and size of computing resources you need
 - You can access as many resources as you need, almost instantly
-- Simple way to access ser vers, storage, databases and a set of application ser vices
+- Simple way to access servers, storage, databases and a set of application services
 - Amazon Web Services owns and maintains the network-connected hardware required for these application services, while you provision and use what you need via a web application.
 
 The Deployment Models of the Cloud
@@ -35,17 +35,19 @@ The Deployment Models of the Cloud
 - Public Cloud:
 
   - Cloud resources owned and operated by a third-party cloud service provider delivered over the Internet.
+
   - Six Advantages of Cloud Computing
+
     - Trade capital expense (CAPEX) for operational expense (OPEX)
       - Pay On-Demand: don’t own hardware
       - Reduced Total Cost of Ownership (TCO) & Operational Expense (OPEX)
-  - Benefit from massive economies of scale
-    - Prices are reduced as AWS is more efficient due to large scale
-  - Stop guessing capacity
-    - Scale based on actual measured usage
-  - Increase speed and agility
-  - Stop spending money running and maintaining data centers
-  - Go global in minutes: leverage the AWS global infrastructure
+    - Benefit from massive economies of scale
+      - Prices are reduced as AWS is more efficient due to large scale
+    - Stop guessing capacity
+      - Scale based on actual measured usage
+    - Increase speed and agility
+    - Stop spending money running and maintaining data centers
+    - Go global in minutes: leverage the AWS global infrastructure
 
   - The Five Characteristics of Cloud Computing
     - On-demand self service: Users can provision resources and use them without human interaction from the service provider
@@ -56,7 +58,7 @@ The Deployment Models of the Cloud
     - Rapid elasticity and scalability:
       - Automatically and quickly acquire and dispose resources when needed
       - Quickly and easily scale based on demand
-    - Measured ser vice: Usage is measured, users pay correctly for what they have used
+    - Measured service: Usage is measured, users pay correctly for what they have used
 
 - Hybrid Cloud:
   - Keep some servers on premises and extend some capabilities to the Cloud
@@ -65,15 +67,15 @@ The Deployment Models of the Cloud
 
 Types of Cloud Computing
 
-- Infrastructure as a Ser vice (IaaS)
+- Infrastructure as a Service (IaaS)
   - Provide building blocks for cloud IT
   - Provides networking, computers, data storage space
   - Highest level of flexibility
   - Easy parallel with traditional on-premises IT
-- Platform as a Ser vice (PaaS)
+- Platform as a Service (PaaS)
   - Removes the need for your organization to manage the underlying infrastructure
   - Focus on the deployment and management of your applications
-- Software as a Ser vice (SaaS)
+- Software as a Service (SaaS)
   - Completed product that is run and managed by the service provider
 
 Pricing of the Cloud
@@ -91,7 +93,7 @@ AWS Global Infrastructure
 - AWS Regions
 
   - A region is a cluster of data centers
-  - Most AWS ser vices are region-scoped
+  - Most AWS services are region-scoped
 
 - AWS Availability Zones
 
@@ -119,7 +121,7 @@ Shared Responsibility Model diagram
 
 IAM: Permissions
 
-- Users or Groups can be assigned JSON documents called policies
+- Users or Groups can be assigned JSON documents called _policies_
 - These policies define the permissions of the users
 - In AWS you apply the least privilege principle: don’t give more permissions than a user needs
 
@@ -146,11 +148,11 @@ Statements consists of
   "Id": "S3-Account-Permissions",
   "Statement": [
     {
-        "Sid": "1",
+      "Sid": "1",
       "Effect": "Allow",
-      "Principal":{
-        "AWS":["arn:aws:iam:123456789012:root"]
-      }
+      "Principal": {
+        "AWS": ["arn:aws:iam:123456789012:root"]
+      },
       "Action": "ec2:Describe*",
       "Resource": "*"
     }
@@ -162,8 +164,7 @@ To access AWS, you have three options:
 
 - AWS Management Console (protected by password + MFA)
 - AWS Command Line Interface (CLI): protected by access keys
-- AWS Software Developer Kit (SDK) - for code: protected by access keys
-  Access Keys are generated through the AWS Console
+- AWS Software Developer Kit (SDK) - for code: protected by access key, Access Keys are generated through the AWS Console
 
 The AWS CLI
 
@@ -185,8 +186,7 @@ the AWS SDK
 IAM Roles for Services
 
 - Some AWS service will need to perform actions on your behalf
-- To do so, we will assign permissions to AWS services
-  with IAM Roles
+- To do so, we will assign permissions to AWS services with IAM Roles
 - Common roles:
   - EC2 Instance Roles
   - Lambda Function Roles
@@ -279,7 +279,7 @@ Introduction to Security Groups
 - Security groups are acting as a “firewall” on EC2 instances
 - They regulate:
   - Access to Ports
-  - Authorised IP ranges – IPv4 and IPv6
+  - Authorized IP ranges – IPv4 and IPv6
   - Control of inbound network (from other to the instance)
   - Control of outbound network (from the instance to other)
 
@@ -290,10 +290,9 @@ Security Groups
 - Does live “outside” the EC2 – if traffic is blocked the EC2 instance won’t see it
 - It’s good to maintain one separate security group for SSH access
 - If your application is not accessible (time out), then it’s a security group issue
-- If your application gives a “connection refused“ error, then it’s an application
-  error or it’s not launched
+- If your application gives a “connection refused“ error, then it’s an application error or it’s not launched
 - All inbound traffic is blocked by default
-- All outbound traffic is authorised by default
+- All outbound traffic is authorized by default
 
 Classic Ports
 
