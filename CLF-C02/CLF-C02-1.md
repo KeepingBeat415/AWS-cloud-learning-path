@@ -310,7 +310,7 @@ EC2 Instances Purchasing Options
 - Reserved (1 & 3 years)
   - Reserved Instances – long workloads
   - Convertible Reserved Instances – long workloads with flexible instances
-- Savings Plans (1 & 3 years) –commitment to an amount of usage, long workload
+- Savings Plans (1 & 3 years) – commitment to an amount of usage, long workload
 - Spot Instances – short workloads, cheap, can lose instances (less reliable)
 - Dedicated Hosts – book an entire physical server, control instance placement
 - Dedicated Instances – no other customers will share your hardware
@@ -354,7 +354,8 @@ EC2 Spot Instances
 - Can get a discount of up to 90% compared to On-demand
 - Instances that you can “lose” at any point of time if your max price is less than the current spot price
 - The MOST cost-efficient instances in AWS
-- Useful for workloads that are resilient to failure•Batch jobs
+- Useful for workloads that are resilient to failure
+  - Batch jobs
   - Data analysis
   - Image processing
   - Any distributed workloads
@@ -364,7 +365,7 @@ EC2 Spot Instances
 EC2 Dedicated Hosts
 
 - A physical server with EC2 instance capacity fully dedicated to your use
-- Allows you address compliance requirements and use your existing ser ver-bound software licenses (per-socket, per-core, pe—VM software licenses)
+- Allows you address compliance requirements and use your existing server-bound software licenses (per-socket, per-core, pe—VM software licenses)
 - Purchasing Options:
   - On-demand – pay per second for active Dedicated Host
   - Reserved - 1 or 3 years (No Upfront, Partial Upfront, All Upfront)
@@ -384,25 +385,27 @@ EC2 Capacity Reservations
 - You always have access to EC2 capacity when you need it
 - No time commitment (create/cancel anytime), no billing discounts
 - Combine with Regional Reserved Instances and Savings Plans to benefit from billing discounts
-- You’re charged at On -Demand rate whether you run instances or not
+- You’re charged at On-Demand rate whether you run instances or not
 - Suitable for short-term, uninterrupted workloads that needs to be in a specific AZ
 
 Which purchasing option is right for me?
 
 - On demand: coming and staying in resort whenever we like, we pay the full price
-- Reser ved: like planning ahead and if we plan to stay for a long time, we may get a good discount.
+- Reserved: like planning ahead and if we plan to stay for a long time, we may get a good discount.
 - Savings Plans: pay a certain amount per hour for certain period and stay in any room type (e.g., King, Suite, Sea View, ...)
 - Spot instances: the hotel allows people to bid for the empty rooms and the highest bidder keeps the rooms. You can get kicked out at any time
 - Dedicated Hosts: We book an entire building of the resort
-- Capacity Reser vations: you book a room for a period with full price even you don’t stay in it
+- Capacity Reservations: you book a room for a period with full price even you don’t stay in it
 
 Shared Responsibility Model for EC2
 
 - AWS
+
   - Infrastructure (global network security)
   - Isolation on physical hosts
   - Replacing faulty hardware
   - Compliance validation
+
 - User
   - Security Groups rules
   - Operating-system patches and updates
@@ -410,7 +413,7 @@ Shared Responsibility Model for EC2
   - IAM Roles assigned to EC2 & IAM user access management
   - Data security on your instance
 
-EC2 Section – Summary
+EC2 Section Summary
 
 - EC2 Instance: AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data
 - Security Groups: Firewall attached to the EC2 instance
@@ -419,7 +422,7 @@ EC2 Section – Summary
 - EC2 Instance Role: link to IAM roles
 - Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible), Dedicated Host, Dedicated Instance
 
-### EC2 Instance Storage
+#### EC2 Instance Storage
 
 An EBS Volume
 
