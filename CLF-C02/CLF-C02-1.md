@@ -1252,4 +1252,19 @@ Serverless
 - They just deploy... functions !
 - Initially... Serverless == FaaS (Function as a Service)
 - Serverless was pioneered by AWS Lambda but now also includes anything that’s managed: “databases, messaging, storage, etc.”
-- Ser verless does not mean there are no ser vers...it means you just don’t manage / provision / see them
+- Serverless does not mean there are no ser vers...it means you just don’t manage / provision / see them
+
+AWS Lambda
+
+- Amazon EC2
+
+  - Virtual Servers in the Cloud
+  - Limited by RAM and CPU
+  - Continuously running
+  - Scaling means intervention to add / remove servers
+
+- Amazon Lambda
+  - Virtual functions – no servers to manage!
+  - Limited by time - shor t executions
+  - Run on-demand
+  - Scaling is automated!
