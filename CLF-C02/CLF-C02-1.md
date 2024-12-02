@@ -422,9 +422,9 @@ EC2 Section Summary
 - EC2 Instance Role: link to IAM roles
 - Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible), Dedicated Host, Dedicated Instance
 
-#### EC2 Instance Storage
+### EC2 Instance Storage
 
-An EBS Volume
+#### An EBS Volume
 
 - An EBS (Elastic Block Store) Volume is a network drive you can attach to your instances while they run
 - It allows your instances to persist data, even after their termination
@@ -516,7 +516,8 @@ EFS Infrequent Access (EFS-IA)
 - Example: move files that are not accessed for 60 days to EFS-IA
 - Transparent to the applications accessing EFS
 
-Shared Responsibility Model for EC2 Storage
+#### Shared Responsibility Model for EC2 Storage
+
 AWS
 
 - Infrastructure
@@ -531,9 +532,9 @@ User
 - Responsibility of any data on the drives
 - Understanding the risk of using EC2 Instance Store
 
-Amazon FSx – Overview
+#### Amazon FSx – Overview
 
-- Launch 3rd par ty high-performance file systems on AWS
+- Launch 3rd party high-performance file systems on AWS
 - Fully managed service
   - FSx for Lustre
     - A fully managed, high-performance, scalable file storage for High Performance Computing (HPC)
@@ -548,7 +549,7 @@ Amazon FSx – Overview
       - Can be accessed from AWS or your on-premise infrastructure
   - FSx for NetApp ONTAP
 
-EC2 Instance Storage - Summary
+#### EC2 Instance Storage - Summary
 
 - EBS volumes:
   - network drives attached to one EC2 instance at a time
@@ -564,16 +565,17 @@ EC2 Instance Storage - Summary
 - FSx for Windows: Network File System for Windows servers
 - FSx for Lustre: High Performance Computing Linux file system
 
-#### Elastic Load Balancing & Auto Scaling Groups Section
+---
 
-Scalability & High Availability
+### Elastic Load Balancing & Auto Scaling Groups Section
+
+##### Scalability & High Availability
 
 - Scalability means that an application / system can handle greater loads by adapting.
 - There are two kinds of scalability:
   - Vertical Scalability
     - Vertical Scalability means increasing the size of the instance
-    - For example, your application runs on a t2.micro
-    - Scaling that application vertically means running it on a t2.large
+    - For example, your application runs on a t2.micro,Scaling that application vertically means running it on a t2.large
     - Vertical scalability is very common for non distributed systems, such as a database.
     - There’s usually a limit to how much you can vertically scale (hardware limit)
   - Horizontal Scalability (= elasticity)
@@ -586,13 +588,13 @@ Scalability & High Availability
   - High availability means running your application / system in at least 2 Availability Zones
   - The goal of high availability is to survive a data center loss (disaster)
 
-Scalability vs Elasticity (vs Agility)
+##### Scalability vs Elasticity (vs Agility)
 
 - Scalability: ability to accommodate a larger load by making the hardware stronger (scale up), or by adding nodes (scale out)
 - Elasticity: once a system is scalable, elasticity means that there will be some “auto-scaling” so that the system can scale based on the load. This is “cloud-friendly”: pay-per-use, match demand, optimize costs
 - Agility: (not related to scalability - distractor) new IT resources are only a click away, which means that you reduce the time to make those resources available to your developers from weeks to just minutes.
 
-load balancing
+##### Load balancing
 
 - Load balancers are servers that forward internet traffic to multiple servers (EC2 Instances) downstream.
 
@@ -603,7 +605,7 @@ load balancing
 - Provide SSL termination (HTTPS) for your websites
 - High availability across zones
 
-An Elastic Load Balancer
+##### An Elastic Load Balancer
 
 - An ELB (Elastic Load Balancer) is a managed load balancer
   - AWS guarantees that it will be working
@@ -625,7 +627,7 @@ An Elastic Load Balancer
     - Intrusion detection
   - Classic Load Balancer (retired in 2023) – Layer 4 & 7
 
-An Auto Scaling Group
+##### An Auto Scaling Group
 
 - In real-life, the load on your websites and application can change
 - In the cloud, you can create and get rid of servers very quickly
@@ -637,7 +639,7 @@ An Auto Scaling Group
   - Replace unhealthy instances
 - Cost Savings: only run at an optimal capacity (principle of the cloud)
 
-Auto Scaling Groups – Scaling Strategies
+##### Auto Scaling Groups – Scaling Strategies
 
 - Manual Scaling: Update the size of an ASG manually
 - Dynamic Scaling: Respond to changing demand
@@ -654,7 +656,7 @@ Auto Scaling Groups – Scaling Strategies
   - Automatically provisions the right number of EC2 instances in advance
 - Useful when your load has predictable time-based patterns
 
-ELB & ASG – Summary
+##### ELB & ASG – Summary
 
 - High Availability vs Scalability (vertical and horizontal) vs Elasticity vs Agility in the Cloud
 - Elastic Load Balancers (ELB)
@@ -666,9 +668,11 @@ ELB & ASG – Summary
   - Scale EC2 instances based on the demand on your system, replace unhealthy
   - Integrated with the ELB
 
-#### Amazon S3 Section
+---
 
-Amazon S3 Use cases
+### 8. Amazon S3 Section
+
+##### Amazon S3 Use cases
 
 - Backup and storage
 - Disaster Recovery
@@ -680,7 +684,7 @@ Amazon S3 Use cases
 - Software delivery
 - Static website
 
-Amazon S3 - Buckets
+##### Amazon S3 - Buckets
 
 - Amazon S3 allows people to store objects (files) in “buckets” (directories)
 - Buckets must have a globally unique name (across all regions all accounts)
@@ -694,7 +698,7 @@ Amazon S3 - Buckets
   - Must NOT start with the prefix xn--
   - Must NOT end with the suffix -s3alias
 
-Amazon S3 - Objects
+##### Amazon S3 - Objects
 
 - Objects (files) have a Key
 - The key is the FULL path:
@@ -711,7 +715,7 @@ Amazon S3 - Objects
 - Tags (Unicode key / value pair – up to 10) – useful for security / lifecycle
 - Version ID (if versioning is enabled)
 
-Amazon S3 – Security
+##### Amazon S3 – Security
 
 - User-Based
   - IAM Policies – which API calls should be allowed for a specific user from IAM
@@ -724,7 +728,7 @@ Amazon S3 – Security
   - AND there’s no explicit DENY
 - Encryption: encrypt objects in Amazon S3 using encryption keys
 
-S3 Bucket Policies
+##### S3 Bucket Policies
 
 - JSON based policies
   - Resources: buckets and objects
@@ -741,13 +745,13 @@ Example: User Access to S3 – IAM permissions
 Example: EC2 instance access - Use IAM Roles
 Advanced: Cross-Account Access – Use Bucket Policy
 
-Bucket settings for Block Public Access
+##### Bucket settings for Block Public Access
 
 - These settings were created to prevent company data leaks
 - If you know your bucket should never be public, leave these on
 - Can be set at the account level
 
-Amazon S3 – Static Website Hosting
+##### Amazon S3 – Static Website Hosting
 
 - S3 can host static websites and have them accessible on the Internet
 - The website URL will be (depending on the region)
@@ -756,7 +760,7 @@ Amazon S3 – Static Website Hosting
   - http://bucket-name.s3-website.aws-region.amazonaws.com
 - If you get a 403 Forbidden error, make sure the bucket policy allows public reads!
 
-Amazon S3 - Versioning
+##### Amazon S3 - Versioning
 
 - You can version your files in Amazon S3
 - It is enabled at the bucket level
@@ -768,7 +772,7 @@ Amazon S3 - Versioning
   - Any file that is not versioned prior to enabling versioning will have version “null”
   - Suspending versioning does not delete the previous versions
 
-Amazon S3 – Replication (CRR & SRR)
+##### Amazon S3 – Replication (CRR & SRR)
 
 - Must enable Versioning in source and destination buckets
 - Cross-Region Replication (CRR)
@@ -780,7 +784,7 @@ Amazon S3 – Replication (CRR & SRR)
   - CRR – compliance, lower latency access, replication across accounts
   - SRR – log aggregation, live replication between production and test accounts
 
-S3 Storage Classes
+##### S3 Storage Classes
 
 - Amazon S3 Standard - General Purpose
 
@@ -820,7 +824,7 @@ S3 Storage Classes
   - Archive Access tier (optional): configurable from 90 days to 700+ days
   - Deep Archive Access tier (optional): config. from 180 days to 700+ days
 
-S3 Durability and Availability
+##### S3 Durability and Availability
 
 - Durability:
   - High durability (99.999999999%, 11 9’s) of objects across multiple AZ
@@ -831,21 +835,21 @@ S3 Durability and Availability
   - Varies depending on storage class
   - Example: S3 standard has 99.99% availability = not available 53 minutes a year
 
-S3 Encryption
+##### S3 Encryption
 
 - Server-Side Encryption (Default)
   - Server encrypts the file after receiving it
 - Client-Side Encryption
   - Encrypts the file Before uploading it
 
-IAM Access Analyzer for S3
+##### IAM Access Analyzer for S3
 
 - Ensures that only intended people have access to your S3 buckets
 - Example: publicly accessible bucket, bucket shared with other AWS account...
 - Evaluates S3 Bucket Policies, S3 ACLs, S3 Access Point Policies
 - Powered by IAM Access Analyzer
 
-Shared Responsibility Model for S3
+##### Shared Responsibility Model for S3
 
 - AWS
 
@@ -862,19 +866,18 @@ Shared Responsibility Model for S3
   - S3 Storage Classes
   - Data encryption at rest and in transit
 
-AWS Snow Family
+##### AWS Snow Family
 
 - Highly-secure, portable devices to collect and process data at the edge, and migrate data into and out of AWS
 
 Data Migrations with AWS Snow Family
 
-Challenges:
-
-- Limited connectivity
-- Limited bandwidth
-- High network cost
-- Shared bandwidth (can’t maximize the line)
-- Connection stability
+- Challenges:
+  - Limited connectivity
+  - Limited bandwidth
+  - High network cost
+  - Shared bandwidth (can’t maximize the line)
+  - Connection stability
 
 AWS Snow Family: offline devices to perform data migrations If it takes more than a week to transfer over the network, use Snowball devices!
 
@@ -898,7 +901,7 @@ Edge Computing
   - Run EC2 Instances or Lambda functions at the edge
 - Use cases: preprocess data, machine learning, transcoding media
 
-Hybrid Cloud for Storage
+##### Hybrid Cloud for Storage
 
 - AWS is pushing for ”hybrid cloud”
   - Part of your infrastructure is on-premises
@@ -911,7 +914,7 @@ Hybrid Cloud for Storage
 - S3 is a proprietary storage technology (unlike EFS / NFS), so how do you expose the S3 data on-premise?
 - AWS Storage Gateway!
 
-AWS Storage Gateway
+##### AWS Storage Gateway
 
 - Bridge between on-premise data and cloud data in S3
 - Hybrid storage ser vice to allow on-premises to seamlessly use the AWS Cloud
@@ -921,7 +924,7 @@ AWS Storage Gateway
   - Volume Gateway
   - Tape Gateway
 
-Amazon S3 – Summary
+##### Amazon S3 – Summary
 
 - Buckets vs Objects: global unique name, tied to a region
 - S3 security: IAM policy, S3 Bucket Policy (public access), S3 Encryption
@@ -933,11 +936,13 @@ Amazon S3 – Summary
 - OpsHub: desktop application to manage Snow Family devices
 - Storage Gateway: hybrid solution to extend on-premises storage to S3
 
-#### Database Section
+---
 
-Relational Databases
+### 9. Database Section
 
-NoSQL Databases
+##### Relational Databases
+
+##### NoSQL Databases
 
 - NoSQL = non-SQL = non relational databases
 - NoSQL databases are purpose built for specific data models and have flexible schemas for building modern applications.
@@ -953,7 +958,7 @@ NoSQL Databases
   - Data can be nested
   - Fields can change over time
 
-Databases & Shared Responsibility on AWS
+##### Databases & Shared Responsibility on AWS
 
 - AWS offers use to manage different databases
 - Benefits include:
@@ -962,7 +967,7 @@ Databases & Shared Responsibility on AWS
   - Operating System Patching is handled by AWS
   - Monitoring, alerting
 
-Amazon RDS Overview
+##### Amazon RDS Overview
 
 - RDS stands for Relational Database Service
 - It’s a managed DB service for DB use SQL as a query language.
@@ -974,7 +979,7 @@ Amazon RDS Overview
   - Microsoft SQL Server
   - IBM DB2
 
-Advantage over using RDS versus deploying DB on EC2
+##### Advantage over using RDS versus deploying DB on EC2
 
 - RDS is a managed service:
   - Automated provisioning, OS patching
@@ -987,7 +992,7 @@ Advantage over using RDS versus deploying DB on EC2
   - Storage backed by EBS
 - BUT you can’t SSH into your instances
 
-Amazon Aurora
+##### Amazon Aurora
 
 - Aurora is a proprietary technology from AWS (not open sourced)
 - PostgreSQL and MySQL are both supported as Aurora DB
@@ -1005,7 +1010,7 @@ Amazon Aurora Serverless
 - Pay per second, can be more cost-effective
 - Use cases: good for infrequent, intermittent or unpredictable workloads
 
-RDS Deployments: Read Replicas, Multi-AZ
+##### RDS Deployments: Read Replicas, Multi-AZ
 
 - Read Replicas:
 
@@ -1021,11 +1026,11 @@ RDS Deployments: Read Replicas, Multi-AZ
 RDS Deployments: Multi-Region
 
 - Multi-Region (Read Replicas)
-  - Disaster recover y in case of region issue
+  - Disaster recovery in case of region issue
   - Local performance for global reads
   - Replication cost
 
-DynamoDB
+##### DynamoDB
 
 - Fully Managed Highly available with replication across 3 AZ
 - NoSQL database - not a relational database
@@ -1053,7 +1058,7 @@ DynamoDB – Global Tables
 - Make a DynamoDB table accessible with low latency in multiple-regions
 - Active-Active replication (read/write to any AWS Region)
 
-Redshift Overview
+##### Redshift Overview
 
 - Redshift is based on PostgreSQL, but it’s not used for OLTP
 - It’s OLAP – online analytical processing (analytics and data warehousing)
@@ -1072,7 +1077,7 @@ Redshift Serverless
 - Pay only for what you use (save costs)
 - Use cases: Reporting, dashboarding applications, real-time analytics..
 
-Amazon EMR
+##### Amazon EMR
 
 - EMR stands for “Elastic MapReduce”
 - EMR helps creating Hadoop clusters (Big Data) to analyze and process vast amount of data
@@ -1082,7 +1087,7 @@ Amazon EMR
 - Auto-scaling and integrated with Spot instances
 - Use cases: data processing, machine learning, web indexing, big data...
 
-Amazon Athena
+##### Amazon Athena
 
 - Serverless query service to analyze data stored in Amazon S3
 - Uses standard SQL language to query the files
@@ -1092,9 +1097,9 @@ Amazon Athena
 - Use cases: Business intelligence / analytics / reporting, analyze & query VPC Flow Logs, ELB Logs, CloudTrail trails, etc...
 - Exam Tip: analyze data in S3 using serverless SQL, use Athena
 
-Amazon QuickSight
+##### Amazon QuickSight
 
-- Serverless machine learning-powered business intelligence ser vice to create interactive dashboards
+- Serverless machine learning-powered business intelligence service to create interactive dashboards
 - Fast, automatically scalable, embeddable, with per-session pricing
 - Use cases:
   - Business analytics
@@ -1103,7 +1108,7 @@ Amazon QuickSight
   - Get business insights using data
 - Integrated with RDS, Aurora, Athena, Redshift, S3
 
-DocumentDB
+##### Document DB
 
 - Aurora is an “AWS-implementation” of PostgreSQL / MySQL ...
 - DocumentDB is the same for MongoDB (which is a NoSQL database)
@@ -1113,7 +1118,7 @@ DocumentDB
 - DocumentDB storage automatically grows in increments of 10GB
 - Automatically scales to workloads with millions of requests per seconds
 
-Amazon Neptune
+##### Amazon Neptune
 
 - Fully managed graph database
 - A popular graph dataset would be a social network
@@ -1127,7 +1132,7 @@ Amazon Neptune
 - Highly available with replications across multiple AZs
 - Great for knowledge graphs (Wikipedia), fraud detection, recommendation engines, social networking
 
-Amazon Timestream
+##### Amazon Timestream
 
 - Fully managed, fast, scalable, serverless time series database
 - Automatically scales up/down to adjust capacity
@@ -1135,7 +1140,7 @@ Amazon Timestream
 - 1000s times faster & 1/10th the cost of relational databases
 - Built-in time series analytics functions (helps you identify patterns in your data in near real-time)
 
-Amazon QLDB
+##### Amazon QLDB
 
 - QLDB stands for ”Quantum Ledger Database”
 - A ledger is a book recording financial transactions
@@ -1145,7 +1150,7 @@ Amazon QLDB
 - 2-3x better performance than common ledger blockchain frameworks, manipulate data using SQL
 - Difference with Amazon Managed Blockchain: no decentralization component, in accordance with financial regulation rules
 
-Amazon Managed Blockchain
+##### Amazon Managed Blockchain
 
 - Blockchain makes it possible to build applications where multiple parties can execute transactions without the need for a trusted, central authority.
 - Amazon Managed Blockchain is a managed service to:
@@ -1153,7 +1158,7 @@ Amazon Managed Blockchain
   - Or create your own scalable private network
 - Compatible with the frameworks Hyperledger Fabric & Ethereum
 
-AWS Glue
+##### AWS Glue
 
 - Managed extract, transform, and load (ETL) service
 - Useful to prepare and transform data for analytics
@@ -1161,7 +1166,7 @@ AWS Glue
 - Glue Data Catalog: catalog of datasets
   - can be used by Athena, Redshift, EMR
 
-DMS – Database Migration Service
+##### DMS – Database Migration Service
 
 - Quickly and securely migrate databases to AWS, resilient, self healing
 - The source database remains available during the migration
@@ -1169,8 +1174,9 @@ DMS – Database Migration Service
   - Homogeneous migrations: ex Oracle to Oracle
   - Heterogeneous migrations: ex Microsoft SQL Server to Aurora
 
-Databases & Analytics Summary in AWS•Relational Databases - OLTP: RDS & Aurora (SQL)
+##### Databases & Analytics Summary in AWS
 
+- Relational Databases - OLTP: RDS & Aurora (SQL)
 - Differences between Multi-AZ, Read Replicas, Multi-Region
 - In-memory Database: ElastiCache
 - Key/Value Database: DynamoDB (serverless) & DAX (cache for DynamoDB)
@@ -1186,7 +1192,9 @@ Databases & Analytics Summary in AWS•Relational Databases - OLTP: RDS & Aurora
 - Neptune: graph database
 - Timestream: time-series database
 
-#### Other Compute Section
+---
+
+### Other Compute Section
 
 Docker
 
