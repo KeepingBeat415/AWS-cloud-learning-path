@@ -306,6 +306,7 @@ Amazon EventBridge (formerly CloudWatch Events)
 
 Amazon EventBridge
 
+- Default Event Bus, Partner Event Bus, Custom Event Bus
 - Schema Registry: model event schema
 - You can archive events (all/filter) sent to an event bus (indefinitely or set period)
 - Ability to replay archived events
