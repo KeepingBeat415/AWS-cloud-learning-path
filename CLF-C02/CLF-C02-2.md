@@ -1,4 +1,4 @@
-#### Global Infrastructure Section
+### 12. Global Infrastructure Section
 
 Why make a global application?
 
@@ -8,13 +8,13 @@ Why make a global application?
   - Latency is the time it takes for a network packet to reach a server
   - It takes time for a packet from Asia to reach the US
   - Deploy your applications closer to your users to decrease latency, better experience
-- Disaster Recover y (DR)
+- Disaster Recovery (DR)
   - If an AWS region goes down (earthquake, storms, power shutdown, politics)...
-  - You can fail -over to another region and have your application still working
+  - You can fail-over to another region and have your application still working
   - A DR plan is important to increase the availability of your application
 - Attack protection: distributed global infrastructure is harder to attack
 
-Global AWS Infrastructure
+##### Global AWS Infrastructure
 
 - Regions: For deploying applications and infrastructure
 - Availability Zones: Made of multiple data centers
@@ -25,7 +25,7 @@ Global Applications in AWS
 - Global DNS: Route 53
   - Great to route users to the closest deployment with least latency
   - Great for disaster recovery strategies
-- Global Content Deliver y Network (CDN): CloudFront
+- Global Content Delivery Network (CDN): CloudFront
   - Replicate part of your application to AWS Edge Locations – decrease latency
   - Cache common requests – improved user experience and decreased latency
 - S3 Transfer Acceleration
@@ -33,7 +33,7 @@ Global Applications in AWS
 - AWS Global Accelerator :
   - Improve global application availability and performance using the AWS global network
 
-Amazon Route 53 Overview
+##### Amazon Route 53 Overview
 
 - Route53 is a Managed DNS (Domain Name System)
 - DNS is a collection of rules and records which helps clients understand how to reach a server through URLs.
@@ -45,14 +45,13 @@ Route 53 Routing Policies
 - latency routing policy
 - failover routing policy
 
-Amazon CloudFront
+##### Amazon CloudFront
 
 - Content Delivery Network (CDN)
 - Improves read performance, content is cached at the edge
 - Improves users experience
 - 216 Point of Presence globally (edge locations)
-- DDoS protection (because
-  worldwide), integration with Shield, AWS Web Application Firewall
+- DDoS protection (because worldwide), integration with Shield, AWS Web Application Firewall
 
 CloudFront – Origins
 
@@ -79,7 +78,7 @@ CloudFront vs S3 Cross Region Replication
   - Read only
   - Great for dynamic content that needs to be available at low-latency in few regions
 
-S3 Transfer Acceleration
+##### S3 Transfer Acceleration
 
 - Increase transfer speed by transferring file to an AWS edge location which will forward the data to the S3 bucket in the target region
 
@@ -94,7 +93,7 @@ AWS Global Accelerator vs CloudFront
 
 - They both use the AWS global network and its edge locations around the world
 - Both services integrate with AWS Shield for DDoS protection.
-- CloudFront – Content Deliver y Network
+- CloudFront – Content Delivery Network
   - Improves performance for your cacheable content (such as images and videos)
   - Content is served at the edge
 - Global Accelerator
@@ -103,13 +102,13 @@ AWS Global Accelerator vs CloudFront
   - Good for HTTP use cases that require static IP addresses
   - Good for HTTP use cases that required deterministic, fast regional failover
 
-AWS Outposts
+##### AWS Outposts
 
 - Hybrid Cloud: businesses that keep an on-premises infrastructure alongside a cloud infrastructure
 - Therefore, two ways of dealing with IT systems:
   - One for the AWS cloud (using the AWS console, CLI, and AWS APIs)
   - One for their on-premises infrastructure
-- AWS Outposts are “ser ver racks” that offers the same AWS infrastructure, services, APIs & tools to build your own applications on-premises just as in the cloud
+- AWS Outposts are “server racks” that offers the same AWS infrastructure, services, APIs & tools to build your own applications on-premises just as in the cloud
 - AWS will setup and manage “Outposts Racks” within your on-premises infrastructure and you can start leveraging AWS services on-premises
 - You are responsible for the Outposts Rack physical security
 
@@ -124,7 +123,7 @@ AWS Outposts
 - Some services that work on Outposts:
   Amazon EC2 Amazon EBS Amazon S3 Amazon EKS Amazon ECS Amazon RDS Amazon EMR
 
-AWS WaveLength
+##### AWS WaveLength
 
 - WaveLength Zones are infrastructure deployments embedded within the telecommunications providers’ data centers at the edge of the 5G networks
 - Brings AWS services to the edge of the 5G networks
@@ -135,7 +134,7 @@ AWS WaveLength
 - No additional charges or service agreements
 - Use cases: Smart Cities, ML-assisted diagnostics, Connected Vehicles, Interactive Live Video Streams, AR/VR, Real-time Gaming
 
-AWS Local Zones
+##### AWS Local Zones
 
 - Places AWS compute, storage, database, and other selected AWS services closer to end users to run latency-sensitive applications
 - Extend your VPC to more locations – “Extension of an AWS Region”
@@ -144,21 +143,18 @@ AWS Local Zones
   - AWS Region: N. Virginia (us-east-1)
   - AWS Local Zones: Boston, Chicago, Dallas, Houston, Miami
 
-Global Applications in AWS - Summary
+##### Global Applications in AWS - Summary
 
 - Global DNS: Route 53
   - Great to route users to the closest deployment with least latency
   - Great for disaster recovery strategies
-- Global Content Deliver y Network (CDN): CloudFront
+- Global Content Delivery Network (CDN): CloudFront
   - Replicate part of your application to AWS Edge Locations – decrease latency
   - Cache common requests – improved user experience and decreased latency
 - S3 Transfer Acceleration
   - Accelerate global uploads & downloads into Amazon S3
 - AWS Global Accelerator
   - Improve global application availability and performance using the AWS global network
-
-Global Applications in AWS - Summary
-
 - AWS Outposts
   - Deploy Outposts Racks in your own Data Centers to extend AWS services
 - AWS WaveLength
@@ -168,7 +164,7 @@ Global Applications in AWS - Summary
   - Bring AWS resources (compute, database, storage, ...) closer to your users
   - Good for latency-sensitive applications
 
-#### Cloud Integration Section
+### 13. Cloud Integration Section
 
 Section Introduction
 
@@ -177,7 +173,7 @@ Section Introduction
   1. Synchronous communications (application to application)
   2. Asynchronous / Event based (application to queue to application)
 
-Section Introduction
+##### Section Introduction
 
 - Synchronous between applications can be problematic if there are sudden spikes of traffic
 - What if you need to suddenly encode 1000 videos but usually it’s 10?
@@ -189,10 +185,10 @@ Section Introduction
   - using Kinesis: real-time data streaming model
 - These services can scale independently from our application!
 
-Amazon SQS – Standard Queue
+##### Amazon SQS – Standard Queue
 
 - Oldest AWS offering (over 10 years old)
-- Fully managed service (~serverless), use to decouple applications
+- Fully managed service (serverless), use to decouple applications
 - Scales from 1 message per second to 10,000s per second
 - Default retention of messages: 4 days, maximum of 14 days
 - No limit to how many messages can be in the queue
@@ -205,49 +201,51 @@ Amazon SQS – FIFO Queue
 - FIFO = First In First Out (ordering of messages in the queue)
 - Messages are processed in order by the consumer
 
-Amazon Kinesis
+##### Amazon Kinesis
 
 - For the exam: Kinesis = real-time big data streaming
-- Managed ser vice to collect, process, and analyze real-time streaming data at any scale
+- Managed service to collect, process, and analyze real-time streaming data at any scale
 - Too detailed for the Cloud Practitioner exam but good to know:
   - Kinesis Data Streams: low latency streaming to ingest data at scale from hundreds of thousands of sources
   - Kinesis Data Firehose: load streams into S3, Redshift, ElasticSearch, etc...
   - Kinesis Data Analytics: perform real-time analytics on streams using SQL
   - Kinesis Video Streams: monitor real-time video streams for analytics or ML
 
-Amazon SNS
+##### Amazon SNS
 
 - The “event publishers” only sends message to one SNS topic
 - As many “event subscribers” as we want to listen to the SNS topic notifications
 - Each subscriber to the topic will get all the messages
 - Up to 12,500,000 subscriptions per topic, 100,000 topics limit
 
-Amazon MQ
+##### Amazon MQ
 
 - SQS, SNS are “cloud-native” services: proprietary protocols from AWS
-- Traditional applications running from on -premises may use open protocols such as: MQTT, AMQP, STOMP, Openwire, WSS
+- Traditional applications running from on-premises may use open protocols such as: MQTT, AMQP, STOMP, Openwire, WSS
 - When migrating to the cloud, instead of re-engineering the application to use SQS and SNS, we can use Amazon MQ
-- Amazon MQ is a managed message broker ser vice for: RabbitMQ, ACTIVEMQ
+- Amazon MQ is a managed message broker service for: RabbitMQ, ACTIVEMQ
 - Amazon MQ doesn’t “scale” as much as SQS / SNS
 - Amazon MQ runs on servers, can run in Multi-AZ with failover
-- Amazon MQ has both queue feature (~SQS) and topic features (~SNS)
+- Amazon MQ has both queue feature (SQS) and topic features (SNS)
 
-Integration Section – Summary
+##### Integration Section – Summary
 
-- SQS:•Queue service in AWS
+- SQS:
+  - Queue service in AWS
   - Multiple Producers, messages are kept up to 14 days
   - Multiple Consumers share the read and delete messages when done
   - Used to decouple applications in AWS
-- SNS: •Notification service in AWS
+- SNS:
+  - Notification service in AWS
   - Subscribers: Email, Lambda, SQS, HTTP, Mobile...
   - Multiple Subscribers, send all messages to all of them
   - No message retention
 - Kinesis: real-time data streaming, persistence and analysis
 - Amazon MQ: managed message broker for ActiveMQ and RabbitMQ in the cloud (MQTT, AMQP.. protocols)
 
-#### Cloud Monitoring Section
+### 14. Cloud Monitoring Section
 
-Amazon CloudWatch Metrics
+##### Amazon CloudWatch Metrics
 
 - CloudWatch provides metrics for every services in AWS
 - Metric is a variable to monitor (CPU Utilization, NetworkIn...)
@@ -265,7 +263,7 @@ Important Metrics
 - Service Limits: how much you’ve been using a service API
 - Custom metrics: push your own metrics
 
-Amazon CloudWatch Alarms
+##### Amazon CloudWatch Alarms
 
 - Alarms are used to trigger notifications for any metric
 - Alarms actions...
@@ -277,14 +275,14 @@ Amazon CloudWatch Alarms
 - Example: create a billing alarm on the CloudWatch Billing metric
 - Alarm States: OK. INSUFFICIENT_DATA, ALARM
 
-Amazon CloudWatch Logs
+##### Amazon CloudWatch Logs
 
 - CloudWatch Logs can collect log from:
   - Elastic Beanstalk: collection of logs from application
   - ECS: collection from containers
   - AWS Lambda: collection from function logs
   - CloudTrail based on filter
-  - CloudWatch log agents: on EC2 machines or on-premises ser vers
+  - CloudWatch log agents: on EC2 machines or on-premises servers
   - Route53: Log DNS queries
 - Enables real-time monitoring of logs
 - Adjustable CloudWatch Logs retention
@@ -296,7 +294,7 @@ CloudWatch Logs for EC2
 - Make sure IAM permissions are correct
 - The CloudWatch log agent can be setup on-premises too
 
-Amazon EventBridge (formerly CloudWatch Events)
+##### Amazon EventBridge (formerly CloudWatch Events)
 
 - Schedule: Cron jobs (scheduled scripts)
   - Schedule Every hour >> Trigger script on Lambda function

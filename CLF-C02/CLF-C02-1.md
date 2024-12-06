@@ -1194,9 +1194,9 @@ Redshift Serverless
 
 ---
 
-### Other Compute Section
+### 10. Other Compute Section
 
-Docker
+##### Docker
 
 - Docker is a software development platform to deploy apps
 - Apps are packaged in containers that can be run on any OS
@@ -1221,10 +1221,10 @@ Docker images
 
 Docker versus Virtual Machines
 
-- Docker is ”sort of ” a virtualization technology, but not exactly
+- Docker is "sort of" a virtualization technology, but not exactly
 - Resources are shared with the host => many containers on one server
 
-ECS
+##### ECS
 
 - ECS = Elastic Container Service
 - Launch Docker containers on AWS
@@ -1232,20 +1232,20 @@ ECS
 - AWS takes care of starting / stopping containers
 - Has integrations with the Application Load Balancer
 
-Fargate
+##### Fargate
 
 - Launch Docker containers on AWS
 - You do not provision the infrastructure (no EC2 instances to manage) – simpler!
 - Serverless offering
 - AWS just runs containers for you based on the CPU / RAM you need
 
-ECR
+##### ECR
 
 - Elastic Container Registry
 - Private Docker Registry on AWS
 - This is where you store your Docker images so they can be run by ECS or Fargate
 
-Amazon EKS
+##### Amazon EKS
 
 - EKS = Elastic Kubernetes Service
 - Allows you to launch managed Kubernetes clusters on AWS
@@ -1262,9 +1262,9 @@ Serverless
 - They just deploy... functions !
 - Initially... Serverless == FaaS (Function as a Service)
 - Serverless was pioneered by AWS Lambda but now also includes anything that’s managed: “databases, messaging, storage, etc.”
-- Serverless does not mean there are no ser vers...it means you just don’t manage / provision / see them
+- Serverless does not mean there are no servers...it means you just don’t manage / provision / see them
 
-AWS Lambda
+##### AWS Lambda
 
 - Amazon EC2
 
@@ -1289,7 +1289,7 @@ Benefits of AWS Lambda
 - Integrated with many programming languages
 - Easy monitoring through AWS CloudWatch
 - Easy to get more resources per functions (up to 10GB of RAM!)
-- Increasing RAM will also improve CPU and network!-
+- Increasing RAM will also improve CPU and network!
 
 AWS Lambda language support
 
@@ -1324,7 +1324,7 @@ Amazon API Gateway
 - Supports RESTful APIs and WebSocket APIs
 - Support for security, user authentication, API throttling, API keys, monitoring...
 
-AWS Batch
+##### AWS Batch
 
 - Fully managed batch processing at any scale
 - Efficiently run 100,000s of computing batch jobs on AWS
@@ -1348,7 +1348,7 @@ Batch vs Lambda
   - Rely on EBS / instance store for disk space
   - Relies on EC2 (can be managed by AWS)
 
-Amazon Lightsail
+##### Amazon Lightsail
 
 - Virtual servers, storage, databases, and networking
 - Low & predictable pricing
@@ -1361,7 +1361,7 @@ Amazon Lightsail
   - Dev / Test environment
 - Has high availability but no auto-scaling, limited AWS integrations
 
-Other Compute - Summary
+##### Other Compute - Summary
 
 - Docker : container technology to run applications
 - ECS: run Docker containers on EC2 instances
@@ -1372,22 +1372,24 @@ Other Compute - Summary
 - Batch: run batch jobs on AWS across managed EC2 instances
 - Lightsail: predictable & low pricing for simple application & DB stacks
 
-Lambda Summary
+##### Lambda Summary
 
 - Lambda is Serverless, Function as a Service, seamless scaling, reactive
 - Lambda Billing:
   - By the time run x by the RAM provisioned
   - By the number of invocations
-- Language Suppor t: many programming languages except (arbitrary) Docker
+- Language Support: many programming languages except (arbitrary) Docker
 - Invocation time: up to 15 minutes
 - Use cases:
   - Create Thumbnails for images uploaded onto S3
   - Run a Serverless cron job
 - API Gateway: expose Lambda functions as HTTP API
 
-#### Deploying and Managing Infrastructure at Scale Section
+---
 
-CloudFormation
+### 11. Deploying and Managing Infrastructure at Scale Section
+
+##### CloudFormation
 
 - CloudFormation is a declarative way of outlining your AWS Infrastructure, for any resources (most of them are supported).
 - For example, within a CloudFormation template, you say:
@@ -1397,7 +1399,7 @@ CloudFormation
   - I want a load balancer (ELB) in front of these machines
 - Then CloudFormation creates those for you, in the right order, with the exact configuration that you specify
 
-Benefits of AWS CloudFormation (1/2)
+Benefits of AWS CloudFormation
 
 - Infrastructure as code
   - No resources are manually created, which is excellent for control
@@ -1406,9 +1408,6 @@ Benefits of AWS CloudFormation (1/2)
   - Each resources within the stack is tagged with a identifier so you can easily see how much a stack costs you
   - You can estimate the costs of your resources using the CloudFormation template
   - Savings strategy: In Dev, you could automation deletion of templates at 5 PM and recreated at 8 AM, safely
-
-Benefits of AWS CloudFormation (2/2)
-
 - Productivity
   - Ability to destroy and re-create an infrastructure on the cloud on the fly
   - Automated generation of Diagram for your templates!
@@ -1420,7 +1419,7 @@ Benefits of AWS CloudFormation (2/2)
   - Everything we’ll see in this course is supported
   - You can use “custom resources” for resources that are not supported
 
-AWS Cloud Development Kit (CDK)
+##### AWS Cloud Development Kit (CDK)
 
 - Define your cloud infrastructure using a familiar language:
   - JavaScript/TypeScript, Python, Java, and .NET
@@ -1439,13 +1438,13 @@ Developer problems on AWS
 - All the developers want is for their code to run!
 - Possibly, consistently across different applications and environments
 
-AWS Elastic Beanstalk Overview
+##### AWS Elastic Beanstalk Overview
 
 - Elastic Beanstalk is a developer centric view of deploying an application on AWS
 - It uses all the component’s we’ve seen before: EC2, ASG, ELB, RDS, etc...
 - But it’s all in one view that’s easy to make sense of!
 - We still have full control over the configuration
-- Beanstalk = Platform as a Ser vice (PaaS)
+- Beanstalk = Platform as a Service (PaaS)
 - Beanstalk is free but you pay for the underlying instances
 
 Elastic Beanstalk
@@ -1461,9 +1460,6 @@ Elastic Beanstalk
   - Single Instance deployment: good for dev
   - LB + ASG: great for production or pre-production web applications
   - ASG only: great for non-web apps in production (workers, etc..)
-
-Elastic Beanstalk
-
 - Support for many platforms:
   - Go
   - Java SE
@@ -1483,15 +1479,15 @@ Elastic Beanstalk – Health Monitoring
 - Health agent pushes metrics to CloudWatch
 - Checks for app health, publishes health events
 
-AWS CodeDeploy
+##### AWS CodeDeploy
 
 - We want to deploy our application automatically
 - Works with EC2 Instances
-- Works with On-Premises Ser vers
-- Hybrid ser vice
+- Works with On-Premises Servers
+- Hybrid service
 - Servers / Instances must be provisioned and configured ahead of time with the CodeDeploy Agent
 
-CodeCommit – Important – Deprecation
+##### CodeCommit – Important – Deprecation
 
 - On July 25th 2024, AWS abruptly discontinued CodeCommit
 - New customers cannot use the service
@@ -1514,7 +1510,7 @@ AWS CodeCommit
   - Scalable & highly available
   - Private, Secured, Integrated with AWS
 
-AWS CodeBuild
+##### AWS CodeBuild
 
 - Code building service in the cloud (name is obvious)
 - Compiles source code, run tests, and produces packages that are ready to be deployed (by CodeDeploy for example)
@@ -1524,7 +1520,7 @@ AWS CodeBuild
   - Secure
   - Pay-as-you-go pricing – only pay for the build time
 
-AWS CodePipeline
+##### AWS CodePipeline
 
 - Orchestrate the different steps to have the code automatically pushed to production
   - Code => Build => Test => Provision => Deploy
@@ -1533,17 +1529,16 @@ AWS CodePipeline
   - Fully managed, compatible with CodeCommit, CodeBuild, CodeDeploy, Elastic Beanstalk, CloudFormation, GitHub, 3rd-party services (GitHub...) & custom plugins...
   - Fast delivery & rapid updates
 
-AWS CodeArtifact
+##### AWS CodeArtifact
 
 - Software packages depend on each other to be built (also called code dependencies), and new ones are created
 - Storing and retrieving these dependencies is called artifact management
 - Traditionally you need to setup your own artifact management system
 - CodeArtifact is a secure, scalable, and cost-effective artifact management for software development
-- Works with common dependency management tools such as Maven, Gradle,
-- pm, yarn, twine, pip, and NuGet
+- Works with common dependency management tools such as Maven, Gradle, npm, yarn, twine, pip, and NuGet
 - Developers and CodeBuild can then retrieve dependencies straight from CodeArtifact
 
-AWS Systems Manager (SSM)
+##### AWS Systems Manager (SSM)
 
 - Helps you manage your EC2 and On-Premises systems at scale
 - Another Hybrid AWS service
@@ -1551,7 +1546,7 @@ AWS Systems Manager (SSM)
 - Suite of 10+ products
 - Most important features are:
   - Patching automation for enhanced compliance
-  - Run commands across an entire fleet of ser vers
+  - Run commands across an entire fleet of servers
   - Store parameter configuration with the SSM Parameter Store
 - Works for Linux, Windows, MacOS, and Raspberry Pi OS (Raspbian)
 
@@ -1566,7 +1561,7 @@ Systems Manager – SSM Session Manager
 
 - Allows you to start a secure shell on your EC2 and on-premises servers
 - No SSH access, bastion hosts, or SSH keys needed
-- No por t 22 needed (better security)
+- No port 22 needed (better security)
 - Supports Linux, macOS, and Windows
 - Send session log data to S3 or CloudWatch Logs
 
@@ -1578,7 +1573,7 @@ Systems Manager Parameter Store
 - Control access permissions using IAM
 - Version tracking & encryption (optional)
 
-Deployment - Summary
+##### Deployment - Summary
 
 - CloudFormation: (AWS only)
   - Infrastructure as Code, works with almost all of AWS resources
@@ -1589,7 +1584,7 @@ Deployment - Summary
 - CodeDeploy (hybrid): deploy & upgrade any application onto servers
 - Systems Manager (hybrid): patch, configure and run commands at scale
 
-Developer Services - Summary
+##### Developer Services - Summary
 
 - CodeCommit: Store code in private git repository (version controlled)
 - CodeBuild: Build & test code in AWS
