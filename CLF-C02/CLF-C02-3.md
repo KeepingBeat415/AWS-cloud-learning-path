@@ -265,3 +265,130 @@ Billing Alarms in CloudWatch
 - Billing data are for overall worldwide AWS costs
 - It’s for actual cost, not for projected costs
 - Intended a simple alarm (not as powerful as AWS Budgets)
+
+AWS Budgets
+
+- Create budget and send alarms when costs exceeds the budget
+- 4 types of budgets: Usage, Cost, Reservation, Savings Plans
+- For Reserved Instances (RI)
+  - Track utilization
+  - Supports EC2, ElastiCache, RDS, Redshift
+- Up to 5 SNS notifications per budget
+- Can filter by: Service, Linked Account, Tag, Purchase Option, Instance Type, Region, Availability Zone, API Operation, etc...
+- Same options as AWS Cost Explorer!
+- 2 budgets are free, then $0.02/day/budget
+
+AWS Cost Anomaly Detection
+
+- Continuously monitor your cost and usage using ML to detect unusual spends
+- It learns your unique, historic spend patterns to detect one-time cost spike and/or continuous cost increases (you don’t need to define thresholds)
+- Monitor AWS services, member accounts, cost allocation tags, or cost categories
+- Sends you the anomaly detection report with root-cause analysis
+- Get notified with individual alerts or daily/weekly summary (using SNS)
+
+AWS Service Quotas
+
+- Notify you when you’re close to a service quota value threshold
+- Create CloudWatch Alarms on the Service Quotas console
+- Example: Lambda concurrent executions
+- Request a quota increase from AWS Service Quotas or shutdown resources before limit is reached
+
+Trusted Advisor
+
+- No need to install anything – high level AWS account assessment
+- Analyze your AWS accounts and provides recommendation on 6 categories:
+  - Cost optimization
+  - Performance
+  - Security
+  - Fault tolerance
+  - Service limits
+  - Operational Excellence
+- Business & Enterprise Support plan
+  - Full Set of Checks
+  - Programmatic Access using AWS Support API
+
+AWS Support Plans Pricing
+
+- Basic Support: free
+
+AWS Basic Support Plan
+
+- Customer Ser vice & Communities - 24x7 access to customer service, documentation, whitepapers, and support forums.
+- AWS Trusted Advisor - Access to the 7 core Trusted Advisor checks and guidance to provision your resources following best practices to increase performance and improve security.
+- AWS Personal Health Dashboard - A personalized view of the health of AWS services, and alerts when your resources are impacted.
+
+AWS Developer Support Plan
+
+- All Basic Support Plan +
+- Business hours email access to Cloud Support Associates
+- Unlimited cases / unlimited contacts
+- Case severity / response times:
+- General guidance: < 24 business hours
+- System impaired: < 12 business hours
+
+AWS Business Support Plan (24/7)
+
+- Intended to be used if you have production workloads
+- Trusted Advisor – Full set of checks + API access
+- 24x7 phone, email, and chat access to Cloud Support Engineers
+- Unlimited cases / unlimited contacts
+- Access to Infrastructure Event Management for additional fee.
+- Case severity / response times:
+  - General guidance: < 24 business hours
+  - System impaired: < 12 business hours
+  - Production system impaired: < 4 hours
+  - Production system down: < 1 hour
+
+AWS Enterprise On-Ramp Support Plan (24/7)
+
+- Intended to be used if you have production or business critical workloads
+- All of Business Support Plan +
+- Access to a pool of Technical Account Managers (TAM)
+- Concierge Support Team (for billing and account best practices)
+- Infrastructure Event Management, Well-Architected & Operations Reviews
+- Case severity / response times:
+  - Production system impaired: < 4 hours
+  - Production system down: < 1 hour
+  - Business-critical system down: < 30 minutes
+
+AWS Enterprise Support Plan (24/7)
+
+- Intended to be used if you have mission critical workloads
+- All of Business Support Plan +
+- Access to a designated Technical Account Manager (TAM)
+- Concierge Support Team (for billing and account best practices)
+- Infrastructure Event Management, Well-Architected & Operations Reviews
+- Access to AWS Incident Detection and Response (for an additional fee)
+- Case severity / response times:
+  - Production system impaired: < 4 hours
+  - Production system down: < 1 hour
+  - Business-critical system down: < 15 minutes
+
+Account Best Practices – Summary
+
+- Operate multiple accounts using Organizations
+- Use SCP (service control policies) to restrict account power
+- Easily setup multiple accounts with best-practices with AWS Control Tower
+- Use Tags & Cost Allocation Tags for easy management & billing
+- IAM guidelines: MFA, least-privilege, password policy, password rotation
+- Config to record all resources configurations & compliance over time
+- CloudFormation to deploy stacks across accounts and regions
+- Trusted Advisor to get insights, Support Plan adapted to your needs
+- Send Service Logs and Access Logs to S3 or CloudWatch Logs
+- CloudTrail to record API calls made within your account
+- If your Account is compromised: change the root password, delete and rotate all passwords / keys, contact the AWS support
+- Allow users to create pre-defined stacks defined by admins using AWS Ser vice Catalog-
+
+Billing and Costing Tools – Summary
+
+- Compute Optimizer : recommends resources’ configurations to reduce cost
+- Pricing Calculator : cost of services on AWS
+- Billing Dashboard: high level overview + free tier dashboard
+- Cost Allocation Tags: tag resources to create detailed reports
+- Cost and Usage Reports: most comprehensive billing dataset
+- Cost Explorer : View current usage (detailed) and forecast usage
+- Billing Alarms: in us-east-1 – track overall and per-service billing
+- Budgets: more advanced – track usage, costs, RI, and get alerts
+- Savings Plans: easy way to save based on long-term usage of AWS
+- Cost Anomaly Detection: detect unusual spends using Machine Learning
+- Ser vice Quotas: notify you when you’re close to service quota threshold
