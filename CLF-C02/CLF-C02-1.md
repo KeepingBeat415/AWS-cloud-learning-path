@@ -1,9 +1,9 @@
-#### Server
+### 1. Server
 
 The server composed of:
 
 - Compute: CPU
-- Memory: RAM
+- Memory: RAM (Random Access Memory)
 - Storage: Data
 - Database: Store data in a structured way
 - Network: Routers, switch, DNS server
@@ -23,7 +23,7 @@ Cloud Computing:
 - Simple way to access servers, storage, databases and a set of application services
 - Amazon Web Services owns and maintains the network-connected hardware required for these application services, while you provision and use what you need via a web application.
 
-The Deployment Models of the Cloud
+##### The Deployment Models of the Cloud
 
 - Private Cloud:
 
@@ -65,7 +65,7 @@ The Deployment Models of the Cloud
   - Control over sensitive assets in your private infrastructure
   - Flexibility and cost-effectiveness of the public cloud
 
-Types of Cloud Computing
+##### Types of Cloud Computing
 
 - Infrastructure as a Service (IaaS)
   - Provide building blocks for cloud IT
@@ -78,7 +78,7 @@ Types of Cloud Computing
 - Software as a Service (SaaS)
   - Completed product that is run and managed by the service provider
 
-Pricing of the Cloud
+##### Pricing of the Cloud
 
 - AWS has 3 pricing fundamentals, following the pay-as-you-go pricing model
 - Compute:
@@ -88,7 +88,7 @@ Pricing of the Cloud
 - Data transfer OUT of the Cloud:
   - Data transfer IN is free
 
-AWS Global Infrastructure
+##### AWS Global Infrastructure
 
 - AWS Regions
 
@@ -111,7 +111,7 @@ Shared Responsibility Model diagram
 - AWS = RESPONSIBILITY FOR THE SECURITY OF THE CLOUD
 - CUSTOMER = RESPONSIBILITY FOR THE SECURITY IN THE CLOUD
 
-#### IAM - Identity and Access Management
+### 2. IAM - Identity and Access Management
 
 - IAM = Identity and Access Management, Global service
 - Root account created by default, shouldn’t be used or shared
@@ -125,7 +125,7 @@ IAM: Permissions
 - These policies define the permissions of the users
 - In AWS you apply the least privilege principle: don’t give more permissions than a user needs
 
-IAM Policies Structure
+##### IAM Policies Structure
 
 Consists of
 
@@ -160,7 +160,7 @@ Statements consists of
 }
 ```
 
-To access AWS, you have three options:
+##### To access AWS, you have three options:
 
 - AWS Management Console (protected by password + MFA)
 - AWS Command Line Interface (CLI): protected by access keys
@@ -183,7 +183,7 @@ the AWS SDK
   - IoT Device SDKs (Embedded C, Arduino, ...)
 - Example: AWS CLI is built on AWS SDK for Python
 
-IAM Roles for Services
+##### IAM Roles for Services
 
 - Some AWS service will need to perform actions on your behalf
 - To do so, we will assign permissions to AWS services with IAM Roles
@@ -200,7 +200,7 @@ IAM Security Tools
   1. Access advisor shows the service permissions granted to a user and when those services were last accessed.
   1. You can use this information to revise your policies.
 
-IAM Section – Summary
+##### IAM Section – Summary
 
 - Users: mapped to a physical user, has a password for AWS Console
 - Groups: contains users only
@@ -212,7 +212,7 @@ IAM Section – Summary
 - Access Keys: access AWS using the CLI or SDK
 - Audit: IAM Credential Reports & IAM Access Advisor
 
-#### EC2 - Elastic Compute Cloud
+### 3. EC2 - Elastic Compute Cloud
 
 EC2 User Data
 
@@ -269,7 +269,7 @@ EC2 Instance Types – Storage Optimized
   - Data warehousing applications
   - Distributed file systems
 
-Introduction to Security Groups
+##### Introduction to Security Groups
 
 - Security Groups are the fundamental of network security in AWS
 - They control how traffic is allowed into or out of our EC2 Instances.
@@ -294,7 +294,7 @@ Security Groups
 - All inbound traffic is blocked by default
 - All outbound traffic is authorized by default
 
-Classic Ports
+##### Classic Ports
 
 - 22 = SSH (Secure Shell) - log into a Linux instance
   - SSH is one of the most important function. It allows you to control a remote machine, all using the command line.
@@ -304,7 +304,7 @@ Classic Ports
 - 443 = HTTPS – access secured websites
 - 3389 = RDP (Remote Desktop Protocol) – log into a Windows instance
 
-EC2 Instances Purchasing Options
+##### EC2 Instances Purchasing Options
 
 - On-Demand Instances – short workload, predictable pricing, pay by second
 - Reserved (1 & 3 years)
@@ -316,7 +316,7 @@ EC2 Instances Purchasing Options
 - Dedicated Instances – no other customers will share your hardware
 - Capacity Reservations – reserve capacity in a specific AZ for any duration
 
-EC2 On Demand
+##### EC2 On Demand
 
 - Pay for what you use:
   - Linux or Windows - billing per second, after the first minute
@@ -325,7 +325,7 @@ EC2 On Demand
 - No long-term commitment
 - Recommended for short-term and un-interrupted workloads, where you can't predict how the application will behave
 
-EC2 Reserved Instances
+##### EC2 Reserved Instances
 
 - Up to 72% discount compared to On-demand
 - You reserve a specific instance attributes (Instance Type, Region, Tenancy, OS)
@@ -338,7 +338,7 @@ EC2 Reserved Instances
   - Can change the EC2 instance type, instance family, OS, scope and tenancy
   - Up to 66% discount Note: the % discounts are different from the video as AWS
 
-EC2 Savings Plans
+##### EC2 Savings Plans
 
 - Get a discount based on long-term usage (up to 72% - same as RIs)
 - Commit to a certain type of usage ($10/hour for 1 or 3 years)
@@ -349,7 +349,7 @@ EC2 Savings Plans
   - OS (e.g., Linux, Windows)
   - Tenancy (Host, Dedicated, Default)
 
-EC2 Spot Instances
+##### EC2 Spot Instances
 
 - Can get a discount of up to 90% compared to On-demand
 - Instances that you can “lose” at any point of time if your max price is less than the current spot price
@@ -362,7 +362,7 @@ EC2 Spot Instances
   - Workloads with a flexible start and end time
 - Not suitable for critical jobs or databases
 
-EC2 Dedicated Hosts
+##### EC2 Dedicated Hosts
 
 - A physical server with EC2 instance capacity fully dedicated to your use
 - Allows you address compliance requirements and use your existing server-bound software licenses (per-socket, per-core, pe—VM software licenses)
@@ -373,13 +373,13 @@ EC2 Dedicated Hosts
 - Useful for software that have complicated licensing model (BYOL – Bring Your Own License)
 - Or for companies that have strong regulatory or compliance needs
 
-EC2 Dedicated Instances
+##### EC2 Dedicated Instances
 
 - Instances run on hardware that’s dedicated to you
 - May share hardware with other instances in same account
 - No control over instance placement (can move hardware after Stop / Start)
 
-EC2 Capacity Reservations
+##### EC2 Capacity Reservations
 
 - Reserve On-Demand instances capacity in a specific AZ for any duration
 - You always have access to EC2 capacity when you need it
@@ -388,7 +388,7 @@ EC2 Capacity Reservations
 - You’re charged at On-Demand rate whether you run instances or not
 - Suitable for short-term, uninterrupted workloads that needs to be in a specific AZ
 
-Which purchasing option is right for me?
+##### Which purchasing option is right for me?
 
 - On demand: coming and staying in resort whenever we like, we pay the full price
 - Reserved: like planning ahead and if we plan to stay for a long time, we may get a good discount.
@@ -397,7 +397,7 @@ Which purchasing option is right for me?
 - Dedicated Hosts: We book an entire building of the resort
 - Capacity Reservations: you book a room for a period with full price even you don’t stay in it
 
-Shared Responsibility Model for EC2
+##### Shared Responsibility Model for EC2
 
 - AWS
 
@@ -413,7 +413,7 @@ Shared Responsibility Model for EC2
   - IAM Roles assigned to EC2 & IAM user access management
   - Data security on your instance
 
-EC2 Section Summary
+##### EC2 Section Summary
 
 - EC2 Instance: AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data
 - Security Groups: Firewall attached to the EC2 instance
@@ -422,9 +422,9 @@ EC2 Section Summary
 - EC2 Instance Role: link to IAM roles
 - Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible), Dedicated Host, Dedicated Instance
 
-### EC2 Instance Storage
+### 4. EC2 Instance Storage
 
-#### An EBS Volume
+##### An EBS Volume
 
 - An EBS (Elastic Block Store) Volume is a network drive you can attach to your instances while they run
 - It allows your instances to persist data, even after their termination
@@ -438,7 +438,7 @@ EBS Volume
 - It’s a network drive (i.e. not a physical drive)
   - It uses the network to communicate the instance, which means there might be a bit of latency
   - It can be detached from an EC2 instance and attached to another one quickly
-- It’s locked to an Availability Zone (AZ)
+- It’s _locked_ to an Availability Zone (AZ)
   - An EBS Volume in us-east-1a cannot be attached to us-east-1b
   - To move a volume across, you first need to snapshot it
 - Have a provisioned capacity (size in GBs, and IOPS)
@@ -465,7 +465,7 @@ EBS Snapshots
   - Setup rules to retain deleted snapshots so you can recover them after an accidental deletion
   - Specify retention (from 1 day to 1 year)
 
-AMI Overview
+##### AMI Overview
 
 - AMI = Amazon Machine Image
 - AMI are a customization of an EC2 instance
@@ -477,7 +477,7 @@ AMI Overview
   - Your own AMI: you make and maintain them yourself
   - An AWS Marketplace AMI: an AMI someone else made (and potentially sells)
 
-AMI Process (from an EC2 instance)
+##### AMI Process (from an EC2 instance)
 
 - Start an EC2 instance and customize it
 - Stop the instance (for data integrity)
@@ -491,7 +491,7 @@ EC2 Image Builder
 - Can be run on a schedule (weekly, whenever packages are updated, etc...)
 - Free service (only pay for the underlying resources)
 
-EC2 Instance Store
+##### EC2 Instance Store
 
 - EBS volumes are network drives with good but “limited” performance
 - If you need a high-performance hardware disk, use EC2 Instance Store
@@ -501,13 +501,13 @@ EC2 Instance Store
 - Risk of data loss if hardware fails
 - Backups and Replication are your responsibility
 
-EFS – Elastic File System
+##### EFS – Elastic File System
 
 - Managed NFS (network file system) that can be mounted on 100s of EC2
 - EFS works with Linux EC2 instances in multi-AZ
 - Highly available, scalable, expensive (3x gp2), pay per use, no capacity planning
 
-EFS Infrequent Access (EFS-IA)
+##### EFS Infrequent Access (EFS-IA)
 
 - Storage class that is cost-optimized for files not accessed every day
 - Up to 92% lower cost compared to EFS Standard
@@ -516,7 +516,7 @@ EFS Infrequent Access (EFS-IA)
 - Example: move files that are not accessed for 60 days to EFS-IA
 - Transparent to the applications accessing EFS
 
-#### Shared Responsibility Model for EC2 Storage
+##### Shared Responsibility Model for EC2 Storage
 
 AWS
 
@@ -532,7 +532,7 @@ User
 - Responsibility of any data on the drives
 - Understanding the risk of using EC2 Instance Store
 
-#### Amazon FSx – Overview
+##### Amazon FSx – Overview
 
 - Launch 3rd party high-performance file systems on AWS
 - Fully managed service
@@ -543,13 +543,13 @@ User
     - Scales up to 100s GB/s, millions of IOPS, sub-ms latencies
   - FSx for Windows File Server
     - A fully managed, highly reliable, and scalable Windows native shared file system
-      - Built on Windows File Ser ver
+      - Built on Windows File Server
       - Supports SMB protocol & Windows NTFS
       - Integrated with Microsoft Active Directory
       - Can be accessed from AWS or your on-premise infrastructure
   - FSx for NetApp ONTAP
 
-#### EC2 Instance Storage - Summary
+##### EC2 Instance Storage - Summary
 
 - EBS volumes:
   - network drives attached to one EC2 instance at a time
@@ -567,7 +567,7 @@ User
 
 ---
 
-### Elastic Load Balancing & Auto Scaling Groups Section
+### 5. Elastic Load Balancing & Auto Scaling Groups Section
 
 ##### Scalability & High Availability
 
