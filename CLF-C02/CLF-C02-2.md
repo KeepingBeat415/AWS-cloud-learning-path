@@ -309,7 +309,7 @@ Amazon EventBridge
 - You can archive events (all/filter) sent to an event bus (indefinitely or set period)
 - Ability to replay archived events
 
-AWS CloudTrail
+##### AWS CloudTrail
 
 - Provides governance, compliance and audit for your AWS Account
 - CloudTrail is enabled by default!

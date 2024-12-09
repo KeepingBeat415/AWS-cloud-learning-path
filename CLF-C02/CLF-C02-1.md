@@ -670,7 +670,7 @@ User
 
 ---
 
-### 8. Amazon S3 Section
+### 6. Amazon S3 Section
 
 ##### Amazon S3 Use cases
 
@@ -800,20 +800,28 @@ Advanced: Cross-Account Access – Use Bucket Policy
   - 99.9% Availability
   - Use cases: Disaster Recovery, backups
 - Amazon S3 One Zone-Infrequent Access
+
   - High durability (99.999999999%) in a single AZ; data lost when AZ is destroyed
   - 99.5% Availability
   - Use Cases: Storing secondary backup copies of on-premise data, or data you can recreate
+
 - Amazon S3 Glacier Instant Retrieval
+
   - Low-cost object storage meant for archiving / backup
   - Pricing: price for storage + object retrieval cost
   - Millisecond retrieval, great for data accessed once a quarter
   - Minimum storage duration of 90 days
+
 - Amazon S3 Glacier Flexible Retrieval
+
   - Expedited (1 to 5 minutes), Standard (3 to 5 hours), Bulk (5 to 12 hours) – free
   - Minimum storage duration of 90 days
+
 - Amazon S3 Glacier Deep Archive
+
   - Standard (12 hours), Bulk (48 hours)
   - Minimum storage duration of 180 days
+
 - Amazon S3 Intelligent Tiering
   - Small monthly monitoring and auto-tiering fee
   - Moves objects automatically between Access Tiers based on usage
@@ -845,7 +853,7 @@ Advanced: Cross-Account Access – Use Bucket Policy
 ##### IAM Access Analyzer for S3
 
 - Ensures that only intended people have access to your S3 buckets
-- Example: publicly accessible bucket, bucket shared with other AWS account...
+- Example: publicly accessible bucket, bucket shared with other AWS account
 - Evaluates S3 Bucket Policies, S3 ACLs, S3 Access Point Policies
 - Powered by IAM Access Analyzer
 
@@ -903,7 +911,7 @@ Edge Computing
 
 ##### Hybrid Cloud for Storage
 
-- AWS is pushing for ”hybrid cloud”
+- AWS is pushing for "hybrid cloud"
   - Part of your infrastructure is on-premises
   - Part of your infrastructure is on the cloud
 - This can be due to
@@ -917,7 +925,7 @@ Edge Computing
 ##### AWS Storage Gateway
 
 - Bridge between on-premise data and cloud data in S3
-- Hybrid storage ser vice to allow on-premises to seamlessly use the AWS Cloud
+- Hybrid storage service to allow on-premises to seamlessly use the AWS Cloud
 - Use cases: disaster recovery, backup & restore, tiered storage
 - Types of Storage Gateway:
   - File Gateway
@@ -938,7 +946,7 @@ Edge Computing
 
 ---
 
-### 9. Database Section
+### 7. Database Section
 
 ##### Relational Databases
 
