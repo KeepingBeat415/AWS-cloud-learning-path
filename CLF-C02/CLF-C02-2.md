@@ -1,4 +1,4 @@
-### 12. Global Infrastructure Section
+### 10. Global Infrastructure Section
 
 Why make a global application?
 
@@ -70,7 +70,7 @@ CloudFront vs S3 Cross Region Replication
 
 - CloudFront:
   - Global Edge network
-  - Files are cached for a TTL (maybe a day)
+  - Files are cached for a TTL (Time To Live) (maybe a day)
   - Great for static content that must be available everywhere
 - S3 Cross Region Replication:
   - Must be setup for each region you want replication to happen
@@ -121,7 +121,7 @@ AWS Outposts
   - Easier migration from on-premises to the cloud
   - Fully managed service
 - Some services that work on Outposts:
-  Amazon EC2 Amazon EBS Amazon S3 Amazon EKS Amazon ECS Amazon RDS Amazon EMR
+  Amazon EC2, Amazon EBS, Amazon S3, Amazon EKS, Amazon ECS, Amazon RDS, Amazon EMR
 
 ##### AWS WaveLength
 
@@ -164,7 +164,7 @@ AWS Outposts
   - Bring AWS resources (compute, database, storage, ...) closer to your users
   - Good for latency-sensitive applications
 
-### 13. Cloud Integration Section
+### 11. Cloud Integration Section
 
 Section Introduction
 
@@ -243,7 +243,9 @@ Amazon SQS – FIFO Queue
 - Kinesis: real-time data streaming, persistence and analysis
 - Amazon MQ: managed message broker for ActiveMQ and RabbitMQ in the cloud (MQTT, AMQP.. protocols)
 
-### 14. Cloud Monitoring Section
+---
+
+### 12. Cloud Monitoring Section
 
 ##### Amazon CloudWatch Metrics
 
@@ -322,7 +324,7 @@ Amazon EventBridge
 - A trail can be applied to All Regions (default) or a single Region.
 - If a resource is deleted in AWS, investigate CloudTrail first!
 
-AWS X-Ray
+##### AWS X-Ray
 
 - Debugging in Production, the good old way:
   - Test locally
@@ -344,7 +346,7 @@ AWS X-Ray advantages
 - Where I am throttled?
 - Identify users that are impacted
 
-Amazon CodeGuru
+##### Amazon CodeGuru
 
 - An ML-powered service for automated code reviews and application performance recommendations
 - Provides two functionalities
@@ -364,15 +366,16 @@ Amazon CodeGuru Profiler
 
 - Helps understand the runtime behavior of your application
 - Example: identify if your application is consuming excessive CPU capacity on a logging routine
-- Features:•Identify and remove code inefficiencies
-- Improve application performance (e.g., reduce CPU utilization)
-- Decrease compute costs
-- Provides heap summary (identify which objects using up memory)
-- Anomaly Detection
-- Support applications running on AWS or on-premise
-- Minimal overhead on application
+- Features: 
+  - Identify and remove code inefficiencies
+  - Improve application performance (e.g., reduce CPU utilization)
+  - Decrease compute costs
+  - Provides heap summary (identify which objects using up memory)
+  - Anomaly Detection
+  - Support applications running on AWS or on-premise
+  - Minimal overhead on application
 
-AWS Health Dashboard - Service History
+##### AWS Health Dashboard - Service History
 
 - Shows all regions, all services health
 - Shows historical information for each day

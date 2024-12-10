@@ -1395,7 +1395,7 @@ Batch vs Lambda
 
 ---
 
-### 11. Deploying and Managing Infrastructure at Scale Section
+### 9. Deploying and Managing Infrastructure at Scale Section
 
 ##### CloudFormation
 
