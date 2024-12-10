@@ -1202,7 +1202,7 @@ Redshift Serverless
 
 ---
 
-### 10. Other Compute Section
+### 8. Other Compute Section
 
 ##### Docker
 
