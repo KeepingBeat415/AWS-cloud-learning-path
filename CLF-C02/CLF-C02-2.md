@@ -366,7 +366,7 @@ Amazon CodeGuru Profiler
 
 - Helps understand the runtime behavior of your application
 - Example: identify if your application is consuming excessive CPU capacity on a logging routine
-- Features: 
+- Features:
   - Identify and remove code inefficiencies
   - Improve application performance (e.g., reduce CPU utilization)
   - Decrease compute costs
@@ -385,8 +385,8 @@ Amazon CodeGuru Profiler
 AWS Health Dashboard – Your Account
 
 - Previously called AWS Personal Health Dashboard (PHD)
-- AWS Account Health Dashboard provides aler ts and remediation guidance when AWS is experiencing events that may impact you.
-- While the Service Health Dashboard displays the general status of AWS services, Account Health Dashboard gives you a personalized view into the performance and availability of the AWS ser vices underlying your AWS resources.
+- AWS Account Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that may impact you.
+- While the Service Health Dashboard displays the general status of AWS services, Account Health Dashboard gives you a personalized view into the performance and availability of the AWS services underlying your AWS resources.
 - The dashboard displays relevant and timely information to help you manage events in progress and provides proactive notification to help you plan for scheduled activities.
 - Can aggregate data from an entire AWS Organization
 
@@ -396,7 +396,7 @@ AWS Health Dashboard – Your Account
 - Shows how AWS outages directly impact you & your AWS resources
 - Alert, remediation, proactive, scheduled activities
 
-Monitoring Summary
+##### Monitoring Summary
 
 - CloudWatch:
   - Metrics: monitor the performance of AWS services and billing metrics
@@ -410,7 +410,7 @@ Monitoring Summary
 - AWS Account Health Dashboard: AWS events that impact your infrastructure
 - Amazon CodeGuru: automated code reviews and application performance recommendations
 
-### VPC Section
+### 13. VPC Section
 
 VPC – Crash Course
 
@@ -422,7 +422,7 @@ VPC – Crash Course
   - Site to Site VPN & Direct Connect
   - Transit Gateway
 
-IP Addresses in AWS
+##### IP Addresses in AWS
 
 - IPv4 – Internet Protocol version 4 (4.3 Billion Addresses)
   - Public IPv4 – can be used on the Internet
@@ -437,7 +437,7 @@ IP Addresses in AWS
   - Example: 2001:db8:3333:4444:cccc:dddd:eeee:ffff
   - Free
 
-VPC & Subnets Primer
+##### VPC & Subnets Primer
 
 - VPC - Virtual Private Cloud: private network to deploy your resources (regional resource)
 - Subnets allow you to partition your network inside your VPC (Availability Zone resource)
@@ -451,7 +451,7 @@ Internet Gateway & NAT Gateways
 - Public Subnets have a route to the internet gateway.
 - NAT Gateways (AWS-managed) & NAT Instances (self-managed) allow your instances in your Private Subnets to access the internet while remaining private
 
-Network ACL & Security Groups
+##### Network ACL & Security Groups
 
 - NACL (Network ACL)
   - A firewall which controls traffic from and to subnet
@@ -463,7 +463,7 @@ Network ACL & Security Groups
   - Can have only ALLOW rules
   - Rules include IP addresses and other security groups
 
-VPC Flow Logs
+##### VPC Flow Logs
 
 - Capture information about IP traffic going into your interfaces:
   - VPC Flow Logs
@@ -476,14 +476,14 @@ VPC Flow Logs
 - Captures network information from AWS managed interfaces too: Elastic Load Balancers, ElastiCache, RDS, Aurora, etc...
 - VPC Flow logs data can go to S3, CloudWatch Logs, and Kinesis Data Firehose
 
-VPC Peering
+##### VPC Peering
 
 - Connect two VPC, privately using AWS’ network
 - Make them behave as if they were in the same network
 - Must not have overlapping CIDR (IP address range)
 - VPC Peering connection is not transitive (must be established for each VPC that need to communicate with one another)
 
-VPC Endpoints
+##### VPC Endpoints
 
 - Endpoints allow you to connect to AWS Services using a private network instead of the public www network
 - This gives you enhanced security and lower latency to access AWS services
@@ -494,7 +494,7 @@ AWS PrivateLink (VPC Endpoint Services)
 
 - Most secure & scalable way to expose a service to 1000s of VPCs
 - Does not require VPC peering, internet gateway, NAT, route tables...
-- Requires a network load balancer (Service VPC) and ENI (Customer VPC)
+- Requires a network load balancer (Service VPC) and ENI (Elastic Network Interface)(Customer VPC)
 
 Site to Site VPN & Direct Connect
 
@@ -513,19 +513,19 @@ Site-to-Site VPN
 - On-premises: must use a Customer Gateway (CGW)
 - AWS: must use a Virtual Private Gateway (VGW)
 
-AWS Client VPN
+##### AWS Client VPN
 
 - Connect from your computer using OpenVPN to your private network in AWS and on-premises
 - Allow you to connect to your EC2 instances over a private IP (just as if you were in the private VPC network)
 - Goes over public Internet
 
-Transit Gateway
+##### Transit Gateway
 
 - For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection
 - One single Gateway to provide this functionality
 - Works with Direct Connect Gateway, VPN connections
 
-VPC Closing Comments
+##### VPC Closing Comments
 
 - VPC – Virtual Private Cloud
 - Subnets – Tied to an AZ, network partition of the VPC
@@ -543,7 +543,7 @@ VPC Closing Comments
 - Direct Connect – direct private connection to AWS
 - Transit Gateway – Connect thousands of VPC and on-premises networks together
 
-### Security & Compliance Section
+### 14. Security & Compliance Section
 
 AWS Shared Responsibility Model
 
@@ -556,7 +556,7 @@ AWS Shared Responsibility Model
 - Shared controls:
   - Patch Management, Configuration Management, Awareness & Training
 
-Example, for RDS
+##### Example, for RDS
 
 - AWS responsibility:
   - Manage the underlying EC2 instance, disable SSH access
@@ -570,7 +570,7 @@ Example, for RDS
   - Ensure parameter groups or DB is configured to only allow SSL connections
   - Database encryption setting
 
-Example, for S3
+##### Example, for S3
 
 - AWS responsibility:
   - Guarantee you get unlimited storage
@@ -583,17 +583,17 @@ Example, for S3
   - IAM user and roles
   - Enabling encryption
 
-DDOS Protection on AWS
+##### DDOS Protection on AWS
 
 - AWS Shield Standard: protects against DDOS attack for your website and applications, for all customers at no additional costs
 - AWS Shield Advanced: 24/7 premium DDoS protection
 - AWS WAF: Filter specific requests based on rules
 - CloudFront and Route 53:
-- Availability protection using global edge network
-- Combined with AWS Shield, provides attack mitigation at the edge
+  - Availability protection using global edge network
+  - Combined with AWS Shield, provides attack mitigation at the edge
 - Be ready to scale – leverage AWS Auto Scaling
 
-AWS Shield
+##### AWS Shield
 
 - AWS Shield Standard:
   - Free service that is activated for every AWS customer
@@ -604,7 +604,7 @@ AWS Shield
   - 24/7 access to AWS DDoS response team (DRP)
   - Protect against higher fees during usage spikes due to DDoS
 
-AWS WAF – Web Application Firewall
+##### AWS WAF – Web Application Firewall
 
 - Protects your web applications from common web exploits (Layer 7)
 - Layer 7 is HTTP (vs Layer 4 is TCP)
@@ -615,7 +615,7 @@ AWS WAF – Web Application Firewall
   - Size constraints, geo-match (block countries)
   - Rate-based rules (to count occurrences of events) – for DDoS protection
 
-AWS Network Firewall
+##### AWS Network Firewall
 
 - Protect your entire Amazon VPC
 - From Layer 3 to Layer 7 protection
@@ -625,7 +625,7 @@ AWS Network Firewall
   - Inbound from internet
   - To / from Direct Connect & Site -
 
-AWS Firewall Manager
+##### AWS Firewall Manager
 
 - Manage security rules in all accounts of an AWS Organization
 - Security policy: common set of security rules
@@ -635,17 +635,17 @@ AWS Firewall Manager
   - AWS Network Firewall
 - Rules are applied to new resources as they are created (good for compliance) across all and future accounts in your Organization
 
-Penetration Testing on AWS Cloud
+##### Penetration Testing on AWS Cloud
 
-- AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure without prior approval for 8 ser vices:
-- Amazon EC2 instances, NAT Gateways, and Elastic Load Balancers
-- Amazon RDS
-- Amazon CloudFront
-- Amazon Aurora
-- Amazon API Gateways
-- AWS Lambda and Lambda Edge functions
-- Amazon Lightsail resources
-- Amazon Elastic Beanstalk environments
+- AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure without prior approval for 8 services:
+  - Amazon EC2 instances, NAT Gateways, and Elastic Load Balancers
+  - Amazon RDS
+  - Amazon CloudFront
+  - Amazon Aurora
+  - Amazon API Gateways
+  - AWS Lambda and Lambda Edge functions
+  - Amazon Lightsail resources
+  - Amazon Elastic Beanstalk environments
 
 Penetration Testing on your AWS Cloud
 
@@ -656,7 +656,7 @@ Penetration Testing on your AWS Cloud
   - Protocol flooding
   - Request flooding (login request flooding, API request flooding)
 
-Data at rest vs. Data in transit
+##### Data at rest vs. Data in transit
 
 - At rest: data stored or archived on a device
   - On a hard disk, on a RDS instance, in S3 Glacier Deep Archive, etc.
@@ -666,7 +666,7 @@ Data at rest vs. Data in transit
 - We want to encrypt data in both states to protect it!
 - For this we leverage encryption keys
 
-AWS KMS (Key Management Service)
+##### AWS KMS (Key Management Service)
 
 - Anytime you hear “encryption” for an AWS service, it’s most likely KMS
 - KMS = AWS manages the encryption keys for us
