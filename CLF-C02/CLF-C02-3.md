@@ -1,18 +1,18 @@
-### Account Management, Billing & Support Section
+### 14. Account Management, Billing & Support Section
 
-AWS Organizations
+##### AWS Organizations
 
 - Global service
 - Allows to manage multiple AWS accounts
 - The main account is the master account
 - Cost Benefits:
-- Consolidated Billing across all accounts - single payment method
-- Pricing benefits from aggregated usage (volume discount for EC2, S3...)
-- Pooling of Reserved EC2 instances for optimal savings
+  - Consolidated Billing across all accounts - single payment method
+  - Pricing benefits from aggregated usage (volume discount for EC2, S3...)
+  - Pooling of Reserved EC2 instances for optimal savings
 - API is available to automate AWS account creation
-- Restrict account privileges using Ser vice Control Policies (SCP)
+- Restrict account privileges using Service Control Policies (SCP)
 
-Multi Account Strategies
+##### Multi Account Strategies
 
 - Create accounts per department, per cost center, per dev / test / prod, based on regulator y restrictions (using SCP), for better resource isolation (ex: VPC), to have separate per-account service limits, isolated account for logging
 - Multi Account vs One Account Multi VPC
@@ -20,7 +20,7 @@ Multi Account Strategies
 - Enable CloudTrail on all accounts, send logs to central S3 account
 - Send CloudWatch Logs to central logging account
 
-Service Control Policies (SCP)
+##### Service Control Policies (SCP)
 
 - Whitelist or blacklist IAM actions
 - Applied at the OU or Account level
@@ -33,14 +33,14 @@ Service Control Policies (SCP)
   - Restrict access to certain services (for example: can’t use EMR)
   - Enforce PCI compliance by explicitly disabling services
 
-AWS Organization – Consolidated Billing
+##### AWS Organization – Consolidated Billing
 
 - When enabled, provides you with:
   - Combined Usage – combine the usage across all AWS accounts in the AWS Organization to share the volume pricing, Reserved Instances and Savings Plans discounts
   - One Bill – get one bill for all AWS Accounts in the AWS Organization
 - The management account can turn off Reserved Instances discount sharing for any account in the AWS Organization, including itself
 
-AWS Control Tower
+##### AWS Control Tower
 
 - Easy way to set up and govern a secure and compliant multi-account AWS environment based on best practices
 - Benefits:
@@ -51,30 +51,30 @@ AWS Control Tower
 - AWS Control Tower runs on top of AWS Organizations:
   - It automatically sets up AWS Organizations to organize accounts and implement SCPs (Service Control Policies)
 
-AWS Resource Access Manager (AWS RAM)
+##### AWS Resource Access Manager (AWS RAM)
 
 - Share AWS resources that you own with other AWS accounts
 - Share with any account or within your Organization
 - Avoid resource duplication!
 - Supported resources include Aurora, VPC Subnets, Transit Gateway, Route 53, EC2 Dedicated Hosts License Manager Configurations
 
-AWS Service Catalog
+##### AWS Service Catalog
 
 - Users that are new to AWS have too many options, and may create stacks that are not compliant / in line with the rest of the organization
-- Some users just want a quick self-ser vice por tal to launch a set of authorized products pre-defined by admins
+- Some users just want a quick self-service portal to launch a set of authorized products pre-defined by admins
 - Includes: virtual machines, databases, storage options, etc...
 - Enter AWS Service Catalog
 
-Pricing Models in AWS
+##### Pricing Models in AWS
 
 - AWS has 4 pricing models:
-- Pay as you go: pay for what you use, remain agile, responsive, meet scale demands
-- Save when you reserve: minimize risks, predictably manage budgets, comply with long-terms requirements
-  - Reservations are available for EC2 Reserved Instances, DynamoDB Reserved Capacity, ElastiCache Reserved Nodes, RDS Reserved Instance, Redshift Reserved Nodes
-- Pay less by using more: volume-based discounts
-- Pay less as AWS grows
+  - Pay as you go: pay for what you use, remain agile, responsive, meet scale demands
+  - Save when you reserve: minimize risks, predictably manage budgets, comply with long-terms requirements
+    - Reservations are available for EC2 Reserved Instances, DynamoDB Reserved Capacity, ElastiCache Reserved Nodes, RDS Reserved Instance, Redshift Reserved Nodes
+  - Pay less by using more: volume-based discounts
+  - Pay less as AWS grows
 
-Free services & free tier in AWS
+##### Free services & free tier in AWS
 
 - IAM
 - VPC
@@ -86,7 +86,7 @@ Free services & free tier in AWS
   - EC2 t2.micro instance for a year
   - S3, EBS, ELB, AWS Data transfer
 
-Compute Pricing – EC2
+##### Compute Pricing – EC2
 
 - Only charged for what you use
 - Number of instances
@@ -113,7 +113,7 @@ Compute Pricing – EC2
   - Reservation for 1 year or 3 years commitment
 - Savings plans as an alternative to save on sustained usage
 
-Compute Pricing – Lambda & ECS
+##### Compute Pricing – Lambda & ECS
 
 - Lambda:
   - Pay per call
@@ -123,7 +123,7 @@ Compute Pricing – Lambda & ECS
 - Fargate:
   - Fargate Launch Type Model: Pay for vCPU and memory resources allocated to your applications in your containers
 
-Storage Pricing – S3
+##### Storage Pricing – S3
 
 - Storage class: S3 Standard, S3 Infrequent Access, S3 One-Zone IA, S3 Intelligent Tiering, S3 Glacier and S3 Glacier Deep Archive
 - Number and size of objects: Price can be tiered (based on volume)
@@ -133,7 +133,7 @@ Storage Pricing – S3
 - Lifecycle transitions
 - Similar service: EFS (pay per use, has infrequent access & lifecycle rules)
 
-Storage Pricing - EBS
+##### Storage Pricing - EBS
 
 - Volume type (based on performance)
 - Storage volume in GB per month provisionned
@@ -147,7 +147,7 @@ Storage Pricing - EBS
   - Outbound data transfer are tiered for volume discounts
   - Inbound is free
 
-Database Pricing - RDS
+##### Database Pricing - RDS
 
 - Per hour billing
 - Database characteristics:
@@ -167,19 +167,19 @@ Database Pricing - RDS
   - Outbound data transfer are tiered for volume discounts
   - Inbound is free
 
-Content Delivery – CloudFront
+##### Content Delivery – CloudFront
 
 - Pricing is different across different geographic regions
 - Aggregated for each edge location, then applied to your bill
 - Data Transfer Out (volume discount)
 - Number of HTTP/HTTPS requests
 
-Networking Costs in AWS per GB - Simplified
+##### Networking Costs in AWS per GB - Simplified
 
 - Use Private IP instead of Public IP for good savings and better network performance
 - Use same AZ for maximum savings (at the cost of high availability)
 
-Savings Plan
+##### Savings Plan
 
 - Commit a certain $ amount per hour for 1 or 3 years
 - Easiest way to setup long-term commitments on AWS
@@ -196,7 +196,7 @@ Savings Plan
 - Setup from the AWS Cost Explorer console
 - Estimate pricing at https://aws.amazon.com/savingsplans/pricing/
 
-AWS Compute Optimizer
+##### AWS Compute Optimizer
 
 - Reduce costs and improve performance by recommending optimal AWS resources for your workloads
 - Helps you choose optimal configurations and right-size your workloads (over/under provisioned)
@@ -209,7 +209,7 @@ AWS Compute Optimizer
 - Lower your costs by up to 25%
 - Recommendations can be exported to S3
 
-Billing and Costing Tools
+##### Billing and Costing Tools
 
 - Estimating costs in the cloud:
   - Pricing Calculator
@@ -222,7 +222,7 @@ Billing and Costing Tools
   - Billing Alarms
   - Budgets
 
-Cost Allocation Tags
+##### Cost Allocation Tags
 
 - Use cost allocation tags to track your AWS costs on a detailed level
 - AWS generated tags
@@ -232,7 +232,7 @@ Cost Allocation Tags
   - Defined by the user
   - Starts with Prefix user :
 
-Tagging and Resource Groups
+##### Tagging and Resource Groups
 
 - Tags are used for organizing resources:
   - EC2: instances, images, load balancers, security groups...
@@ -243,14 +243,14 @@ Tagging and Resource Groups
   - Create, maintain, and view a collection of resources that share common tags
   - Manage these tags using the Tag Editor
 
-Cost and Usage Reports
+##### Cost and Usage Reports
 
 - Dive deeper into your AWS costs and usage
 - The AWS Cost & Usage Report contains the most comprehensive set of AWS cost and usage data available, including additional metadata about AWS services, pricing, and reservations (e.g., Amazon EC2 Reserved Instances (RIs)).
 - The AWS Cost & Usage Report lists AWS usage for each service category used by an account and its IAM users in hourly or daily line items, as well as any tags that you have activated for cost allocation purposes.
 - Can be integrated with Athena, Redshift or QuickSight
 
-Cost Explorer
+##### Cost Explorer
 
 - Visualize, understand, and manage your AWS costs and usage over time
 - Create custom reports that analyze cost and usage data.
@@ -259,14 +259,14 @@ Cost Explorer
 - Choose an optimal Savings Plan (to lower prices on your bill)
 - Forecast usage up to 12 months based on previous usage
 
-Billing Alarms in CloudWatch
+##### Billing Alarms in CloudWatch
 
 - Billing data metric is stored in CloudWatch us-east-1
 - Billing data are for overall worldwide AWS costs
 - It’s for actual cost, not for projected costs
 - Intended a simple alarm (not as powerful as AWS Budgets)
 
-AWS Budgets
+##### AWS Budgets
 
 - Create budget and send alarms when costs exceeds the budget
 - 4 types of budgets: Usage, Cost, Reservation, Savings Plans
@@ -278,7 +278,7 @@ AWS Budgets
 - Same options as AWS Cost Explorer!
 - 2 budgets are free, then $0.02/day/budget
 
-AWS Cost Anomaly Detection
+##### AWS Cost Anomaly Detection
 
 - Continuously monitor your cost and usage using ML to detect unusual spends
 - It learns your unique, historic spend patterns to detect one-time cost spike and/or continuous cost increases (you don’t need to define thresholds)
@@ -286,14 +286,14 @@ AWS Cost Anomaly Detection
 - Sends you the anomaly detection report with root-cause analysis
 - Get notified with individual alerts or daily/weekly summary (using SNS)
 
-AWS Service Quotas
+##### AWS Service Quotas
 
 - Notify you when you’re close to a service quota value threshold
 - Create CloudWatch Alarms on the Service Quotas console
 - Example: Lambda concurrent executions
 - Request a quota increase from AWS Service Quotas or shutdown resources before limit is reached
 
-Trusted Advisor
+##### Trusted Advisor
 
 - No need to install anything – high level AWS account assessment
 - Analyze your AWS accounts and provides recommendation on 6 categories:
@@ -307,13 +307,13 @@ Trusted Advisor
   - Full Set of Checks
   - Programmatic Access using AWS Support API
 
-AWS Support Plans Pricing
+##### AWS Support Plans Pricing
 
 - Basic Support: free
 
 AWS Basic Support Plan
 
-- Customer Ser vice & Communities - 24x7 access to customer service, documentation, whitepapers, and support forums.
+- Customer Service & Communities - 24x7 access to customer service, documentation, whitepapers, and support forums.
 - AWS Trusted Advisor - Access to the 7 core Trusted Advisor checks and guidance to provision your resources following best practices to increase performance and improve security.
 - AWS Personal Health Dashboard - A personalized view of the health of AWS services, and alerts when your resources are impacted.
 
@@ -364,7 +364,7 @@ AWS Enterprise Support Plan (24/7)
   - Production system down: < 1 hour
   - Business-critical system down: < 15 minutes
 
-Account Best Practices – Summary
+##### Account Best Practices – Summary
 
 - Operate multiple accounts using Organizations
 - Use SCP (service control policies) to restrict account power
@@ -379,7 +379,7 @@ Account Best Practices – Summary
 - If your Account is compromised: change the root password, delete and rotate all passwords / keys, contact the AWS support
 - Allow users to create pre-defined stacks defined by admins using AWS Ser vice Catalog-
 
-Billing and Costing Tools – Summary
+##### Billing and Costing Tools – Summary
 
 - Compute Optimizer : recommends resources’ configurations to reduce cost
 - Pricing Calculator : cost of services on AWS
@@ -393,23 +393,25 @@ Billing and Costing Tools – Summary
 - Cost Anomaly Detection: detect unusual spends using Machine Learning
 - Ser vice Quotas: notify you when you’re close to service quota threshold
 
-### Advanced Identity Section
+---
 
-AWS STS (Security Token Service)
+### 15. Advanced Identity Section
+
+##### AWS STS (Security Token Service)
 
 - Enables you to create temporary, limited-privileges credentials to access your AWS resources
 - Short-term credentials: you configure expiration period
 - Use cases
-- Identity federation: manage user identities in external systems, and provide them with STS tokens to access AWS resources
-- IAM Roles for cross/same account access
-- IAM Roles for Amazon EC2: provide temporary credentials for EC2 instances to access AWS resources
+  - Identity federation: manage user identities in external systems, and provide them with STS tokens to access AWS resources
+  - IAM Roles for cross/same account access
+  - IAM Roles for Amazon EC2: provide temporary credentials for EC2 instances to access AWS resources
 
-Amazon Cognito (simplified)
+##### Amazon Cognito (simplified)
 
 - Identity for your Web and Mobile applications users (potentially millions)
 - Instead of creating them an IAM user, you create a user in Cognito
 
-What is Microsoft Active Directory (AD)?
+##### What is Microsoft Active Directory (AD)?
 
 - Found on any Windows Server with AD Domain Services
 - Database of objects: User Accounts, Computers, Printers, File Shares, Security Groups
@@ -417,14 +419,17 @@ What is Microsoft Active Directory (AD)?
 
 AWS Directory Services
 
-- AWS Managed Microsoft AD•Create your own AD in AWS, manage users locally, supports MFA
-- Establish “trust” connections with your on-premise AD
-- AD Connector•Directory Gateway (proxy) to redirect to on-premise AD, supports MFA
-- Users are managed on the on-premise AD
-- Simple AD•AD-compatible managed directory on AWS
-- Cannot be joined with on-premise AD
+- AWS Managed Microsoft AD
+  - Create your own AD in AWS, manage users locally, supports MFA
+  - Establish “trust” connections with your on-premise AD
+- AD Connector
+  - Directory Gateway (proxy) to redirect to on-premise AD, supports MFA
+  - Users are managed on the on-premise AD
+- Simple AD
+  - AD-compatible managed directory on AWS
+  - Cannot be joined with on-premise AD
 
-AWS IAM Identity Center (successor to AWS Single Sign-On)
+##### AWS IAM Identity Center (successor to AWS Single Sign-On)
 
 - One login (single sign-on) for all your
 - AWS accounts in AWS Organizations
@@ -435,7 +440,7 @@ AWS IAM Identity Center (successor to AWS Single Sign-On)
 - Built-in identity store in IAM Identity Center
 - 3rd party: Active Directory (AD), OneLogin, Okta..
 
-Advanced Identity - Summary
+##### Advanced Identity - Summary
 
 - IAM
   - Identity and Access Management inside your AWS account
@@ -443,10 +448,12 @@ Advanced Identity - Summary
 - Organizations: Manage multiple accounts
 - Security Token Ser vice (STS): temporary, limited-privileges credentials to access AWS resources
 - Cognito: create a database of users for your mobile & web applications
-- Director y Ser vices: integrate Microsoft Active Directory in AWS
-- IAM Identity Center : one login for multiple AWS accounts & applications
+- Directory Services: integrate Microsoft Active Directory in AWS
+- IAM Identity Center: one login for multiple AWS accounts & applications
 
-### Other AWS Services
+---
+
+### 16. Other AWS Services
 
 Other AWS services section
 
@@ -455,7 +462,7 @@ Other AWS services section
 - The lectures are short and brief and most likely without hands-on
 - No summary lecture at the end of the section to keep things flexible!
 
-Amazon WorkSpaces
+##### Amazon WorkSpaces
 
 - Managed Desktop as a Service (DaaS) solution to easily provision Windows or Linux desktops
 - Great to eliminate management of on-premise VDI (Virtual Desktop Infrastructure)
@@ -463,7 +470,7 @@ Amazon WorkSpaces
 - Secured data – integrates with KMS
 - Pay-as-you-go service with monthly or hourly rates
 
-Amazon AppStream 2.0
+##### Amazon AppStream 2.0
 
 - Desktop Application Streaming Service
 - Deliver to any computer, without acquiring, provisioning infrastructure
@@ -472,15 +479,16 @@ Amazon AppStream 2.0
 Amazon AppStream 2.0 vs WorkSpaces
 
 - Workspaces
-- Fully managed VDI and desktop available
-- The users connect to the VDI and open native or WAM applications
-- Workspaces are on-demand or always on
-- AppStream 2.0
-- Stream a desktop application to web browsers (no need to connect to a VDI)
-- Works with any device (that has a web browser)
-- Allow to configure an instance type per application type (CPU, RAM, GPU)
+  - Fully managed VDI and desktop available
+  - The users connect to the VDI and open native or WAM applications
+  - Workspaces are on-demand or always on
 
-AWS IoT Core
+- AppStream 2.0
+  - Stream a desktop application to web browsers (no need to connect to a VDI)
+  - Works with any device (that has a web browser)
+  - Allow to configure an instance type per application type (CPU, RAM, GPU)
+
+##### AWS IoT Core
 
 - IoT stands for “Internet of Things” – the network of internet-connected devices that are able to collect and transfer data
 - AWS IoT Core allows you to easily connect IoT devices to the AWS Cloud
@@ -489,7 +497,7 @@ AWS IoT Core
 - Integrates with a lot of AWS services (Lambda, S3, SageMaker, etc.)
 - Build IoT applications that gather, process, analyze, and act on data
 
-Amazon Elastic Transcoder
+##### Amazon Elastic Transcoder
 
 - Elastic Transcoder is used to convert media files stored in S3 into media files in the formats required by consumer playback devices (phones etc..)
 - Benefits:
@@ -498,7 +506,7 @@ Amazon Elastic Transcoder
   - Cost effective – duration-based pricing model
   - Fully managed & secure, pay for what you use
 
-AWS AppSync
+##### AWS AppSync
 
 - Store and sync data across mobile and web apps in real-time
 - Makes use of GraphQL (mobile technology from Facebook)
@@ -509,12 +517,12 @@ AWS AppSync
 - Fine Grained Security
 - AWS Amplify can leverage AWS AppSync in the background!
 
-AWS Amplify
+##### AWS Amplify
 
-- A set of tools and ser vices that helps you develop and deploy scalable full stack web and mobile applications
+- A set of tools and services that helps you develop and deploy scalable full stack web and mobile applications
 - Authentication, Storage, API (REST, GraphQL), CI/CD, PubSub, Analytics, AI/ML Predictions, Monitoring Source Code from AWS, GitHub, etc...
 
-AWS Application Composer
+##### AWS Application Composer
 
 - Visually design and build serverless applications quickly on AWS
 - Deploy AWS infrastructure code without needing to be an expert in AWS
@@ -522,7 +530,7 @@ AWS Application Composer
 - Generates Infrastructure as Code (IaC) using CloudFormation
 - Ability to import existing CloudFormation / SAM templates to visualize them
 
-AWS Device Farm
+##### AWS Device Farm
 
 - Fully-managed service that tests your web and mobile apps against desktop browsers, real mobile devices, and tablets
 - Run tests concurrently on multiple devices (speed up execution)
@@ -640,7 +648,9 @@ Amazon Pinpoint
 - In SNS & SES you managed each message's audience, content, and delivery schedule
 - In Amazon Pinpoint, you create message templates, delivery schedules, highly-targeted segments, and full campaigns
 
-### AWS Architecting & Ecosystem Section
+---
+
+### 17. AWS Architecting & Ecosystem Section
 
 Well Architected Framework General Guiding Principles
 
