@@ -681,7 +681,7 @@ Penetration Testing on your AWS Cloud
   - S3 Glacier
   - Storage Gateway
 
-CloudHSM
+##### Cloud HSM
 
 - KMS => AWS manages the software for encryption
 - CloudHSM => AWS provisions encryption hardware
@@ -689,7 +689,7 @@ CloudHSM
 - You manage your own encryption keys entirely (not AWS)
 - HSM device is tamper resistant, FIPS 140-2 Level 3 compliance
 
-Types of KMS Keys
+##### Types of KMS Keys
 
 - Customer Managed Key:
   - Create, manage and used by the customer, can enable or disable
@@ -705,7 +705,7 @@ Types of KMS Keys
   - Keys generated from your own CloudHSM hardware device
   - Cryptographic operations are performed within the CloudHSM cluster
 
-AWS Certificate Manager (ACM)
+##### AWS Certificate Manager (ACM)
 
 - Let’s you easily provision, manage, and deploy SSL/TLS Certificates
 - Used to provide in-flight encryption for websites (HTTPS)
@@ -717,7 +717,7 @@ AWS Certificate Manager (ACM)
   - CloudFront Distributions
   - APIs on API Gateway
 
-AWS Secrets Manager
+##### AWS Secrets Manager
 
 - Newer service, meant for storing secrets
 - Capability to force rotation of secrets every X days
@@ -726,14 +726,14 @@ AWS Secrets Manager
 - Secrets are encrypted using KMS
 - Mostly meant for RDS integration
 
-AWS Artifact (not really a service)
+##### AWS Artifact (not really a service)
 
 - Portal that provides customers with on-demand access to AWS compliance documentation and AWS agreements
 - Artifact Reports - Allows you to download AWS security and compliance documents from third-party auditors, like AWS ISO certifications, Payment Card Industry (PCI), and System and Organization Control (SOC) reports
 - Artifact Agreements - Allows you to review, accept, and track the status of AWS agreements such as the Business Associate Addendum (BAA) or the Health Insurance Portability and Accountability Act (HIPAA) for an individual account or in your organization
 - Can be used to support internal audit or compliance
 
-Amazon GuardDuty
+##### Amazon GuardDuty
 
 - Intelligent Threat discovery to protect your AWS Account
 - Uses Machine Learning algorithms, anomaly detection, 3rd party data
@@ -749,7 +749,7 @@ Amazon GuardDuty
 - EventBridge rules can target AWS Lambda or SNS
 - Can protect against CryptoCurrency attacks (has a dedicated “finding” for it)
 
-Amazon Inspector
+##### Amazon Inspector
 
 - Automated Security Assessments
 - For EC2 instances
@@ -772,7 +772,7 @@ What does Amazon Inspector evaluate?
 - Network reachability (EC2)
 - A risk score is associated with all vulnerabilities for prioritization
 
-AWS Config
+##### AWS Config
 
 - Helps with auditing and recording compliance of your AWS resources
 - Helps record configurations and changes over time
@@ -791,12 +791,12 @@ AWS Config Resource
 - View configuration of a resource over time
 - View CloudTrail API calls if enabled
 
-AWS Macie
+##### AWS Macie
 
 - Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS.
 - Macie helps identify and alert you to sensitive data, such as personally identifiable information (PII)
 
-AWS Security Hub
+##### AWS Security Hub
 
 - Central security tool to manage security across several AWS accounts and automate security checks
 - Integrated dashboards showing current security and compliance status to quickly take actions
@@ -812,7 +812,7 @@ AWS Security Hub
   - AWS Partner Network Solutions
 - Must first enable the AWS Config Service
 
-Amazon Detective
+##### Amazon Detective
 
 - GuardDuty, Macie, and Security Hub are used to identify potential security issues, or findings
 - Sometimes security findings require deeper analysis to isolate the root cause and take action – it’s a complex process
@@ -820,7 +820,7 @@ Amazon Detective
 - Automatically collects and processes events from VPC Flow Logs, CloudTrail, GuardDuty and create a unified view
 - Produces visualizations with details and context to get to the root cause
 
-AWS Abuse
+##### AWS Abuse
 
 - Report suspected AWS resources used for abusive or illegal purposes
 - Abusive & prohibited behaviors are:
@@ -831,7 +831,7 @@ AWS Abuse
   - Hosting objectionable or copyrighted content – distributing illegal or copyrighted content without consent
   - Distributing malware – AWS resources distributing softwares to harm computers or machines
 
-Root user privileges
+##### Root user privileges
 
 - Root user = Account Owner (created when the account is created)
 - Has complete access to all AWS services and resources
@@ -848,7 +848,7 @@ Root user privileges
   - Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID or VPC endpoint ID
   - Sign up for GovCloud
 
-IAM Access Analyzer
+##### IAM Access Analyzer
 
 - Find out which resources are shared externally
   - S3 Buckets
@@ -860,7 +860,7 @@ IAM Access Analyzer
 - Define Zone of Trust = AWS Account or AWS Organization
 - Access outside zone of trusts => findings
 
-Section Summary: Security & Compliance
+##### Section Summary: Security & Compliance
 
 - Shared Responsibility on AWS
 - Shield: Automatic DDoS Protection + 24/7 support for advanced
@@ -885,6 +885,8 @@ Section Summary: Security & Compliance
   - Register as a seller in the Reserved Instance Marketplace
 - IAM Access Analyzer : identify which resources are shared externally
 - Firewall Manager : manage security rules across an Organization (WAF, Shield...)
+
+---
 
 ### Machine Learning Section
 
