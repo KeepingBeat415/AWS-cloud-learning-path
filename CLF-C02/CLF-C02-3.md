@@ -479,6 +479,7 @@ Other AWS services section
 Amazon AppStream 2.0 vs WorkSpaces
 
 - Workspaces
+
   - Fully managed VDI and desktop available
   - The users connect to the VDI and open native or WAM applications
   - Workspaces are on-demand or always on
@@ -536,32 +537,30 @@ Amazon AppStream 2.0 vs WorkSpaces
 - Run tests concurrently on multiple devices (speed up execution)
 - Ability to configure device settings (GPS, language, Wi-Fi, Bluetooth, ...)
 
-AWS Backup
+##### AWS Backup
 
-- Fully-managed service to centrally manage and automate backups across
-- WS services
+- Fully-managed service to centrally manage and automate backups across AWS services
 - On-demand and scheduled backups
 - Supports PITR (Point-in-time Recovery)
 - Retention Periods, Lifecycle Management, Backup Policies, ...
 - Cross-Region Backup
 - Cross-Account Backup (using AWS Organizations)
 
-AWS Elastic Disaster Recovery (DRS)
+##### AWS Elastic Disaster Recovery Service (DRS)
 
-- Used to be named “CloudEndure Disaster Recovery”
+- Used to be named "CloudEndure Disaster Recovery"
 - Quickly and easily recover your physical, virtual, and cloud-based servers into AWS
 - Example: protect your most critical databases (including Oracle, MySQL, and SQL Server), enterprise apps (SAP), protect your data from ransomware attacks, ...
 - Continuous block-level replication for your servers
 
-AWS DataSync
+##### AWS DataSync
 
 - Move large amount of data from on-premises to AWS
-- Can synchronize to: Amazon S3 (any storage classes – including
-- lacier), Amazon EFS, Amazon FSx for Windows
+- Can synchronize to: Amazon S3 (any storage classes – including glacier), Amazon EFS, Amazon FSx for Windows
 - Replication tasks can be scheduled hourly, daily, weekly
 - The replication tasks are incremental after the first full load
 
-Cloud Migration Strategies: The 7Rs
+##### Cloud Migration Strategies: The 7Rs
 
 - Replatform “lift and reshape”
   - Example: migrate your database to RDS
@@ -579,17 +578,17 @@ Cloud Migration Strategies: The 7Rs
   - Move from a monolithic application to micro-services
   - Example: move an application to Serverless architectures, use AWS S3
 
-AWS Application Discovery Service
+##### AWS Application Discovery Service
 
 - Plan migration projects by gathering information about on-premises data centers
 - Server utilization data and dependency mapping are important for migrations
-- Agentless Discover y (AWS Agentless Discover y Connector)
-- VM inventory, configuration, and performance history such as CPU, memory, and disk usage
-- Agent-based Discover y (AWS Application Discover y Agent)
-- System configuration, system performance, running processes, and details of the network connections between systems
-- Resulting data can be viewed within AWS Migration Hub
+- Agentless Discovery (AWS Agentless Discovery Connector)
+  - VM inventory, configuration, and performance history such as CPU, memory, and disk usage
+- Agent-based Discovery (AWS Application Discovery Agent)
+  - System configuration, system performance, running processes, and details of the network connections between systems
+  - Resulting data can be viewed within AWS Migration Hub
 
-AWS Application Migration Service (MGN)
+##### AWS Application Migration Service (MGN)
 
 - The “AWS evolution” of CloudEndure Migration, replacing AWS Server Migration Service (SMS)
 - Lift-and-shift (rehost) solution which simplify migrating applications to AWS
@@ -597,22 +596,22 @@ AWS Application Migration Service (MGN)
 - Supports wide range of platforms, Operating Systems, and databases
 - Minimal downtime, reduced costs
 
-AWS Migration Evaluator
+##### AWS Migration Evaluator
 
 - Helps you build a data-driven business case for migration to AWS
 - Provides a clear baseline of what your organization is running today
 - Install Agentless Collector to conduct broad-based discovery
-- Take a snapshot of on -premises foot-print, server dependepncies, ...
+- Take a snapshot of on-premises foot-print, server dependepncies, ...
 - Analyze current state, define target state, then develop migration plan
 
-AWS Migration Hub
+##### AWS Migration Hub
 
 - Central location to collect servers and applications inventory data for the assessment, planning, and tracking of migrations to AWS
 - Helps accelerate your migration to AWS, automate lift-and-shift
 - AWS Migration Hub Orchestrator – provides pre-built templates to save time and effort migrating enterprise apps (e.g., SAP, Microsoft SQL Server...)
-- Supports migrations status updates from Application Migration Ser vice (MGN)and Database Migration Ser vice (DMS)
+- Supports migrations status updates from Application Migration Service (MGN) and Database Migration Service (DMS)
 
-AWS Fault Injection Simulator (FIS)
+##### AWS Fault Injection Simulator (FIS)
 
 - A fully managed service for running fault injection experiments on AWS workloads
 - Based on Chaos Engineering – stressing an application by creating disruptive events (e.g., sudden increase in CPU or memory), observing how the system responds, and implementing improvements
@@ -620,7 +619,7 @@ AWS Fault Injection Simulator (FIS)
 - Supports the following AWS services: EC2, ECS, EKS, RDS...
 - Use pre-built templates that generate the desired disruptions
 
-AWS Step Functions
+##### AWS Step Functions
 
 - Build serverless visual workflow to orchestrate your Lambda functions
 - Features: sequence, parallel, conditions, timeouts, error handling, ...
@@ -628,7 +627,7 @@ AWS Step Functions
 - Possibility of implementing human approval feature
 - Use cases: order fulfillment, data processing, web applications, any workflow
 
-AWS Ground Station
+##### AWS Ground Station
 
 - Fully managed service that lets you control satellite communications, process data, and scale your satellite operations
 - Provides a global network of satellite ground stations near AWS regions
@@ -636,7 +635,7 @@ AWS Ground Station
 - Send satellite data to S3 or EC2 instance
 - Use cases: weather forecasting, surface imaging, communications, video broadcasts
 
-Amazon Pinpoint
+##### Amazon Pinpoint
 
 - Scalable 2-way (outbound/inbound) marketing communications service
 - Supports email, SMS, push, voice, and in-app messaging
@@ -663,7 +662,7 @@ Well Architected Framework General Guiding Principles
 - Improve through game days
   - Simulate applications for flash sale days
 
-AWS Cloud Best Practices – Design Principles
+##### AWS Cloud Best Practices – Design Principles
 
 - Scalability: vertical & horizontal
 - Disposable Resources: servers should be disposable & easily configured
@@ -672,12 +671,11 @@ AWS Cloud Best Practices – Design Principles
   - Monolith are applications that do more and more over time, become bigger
   - Break it down into smaller, loosely coupled components
   - A change or a failure in one component should not cascade to other components
-- Ser vices, not Ser vers:
+- Services, not Servers:
   - Don’t use just EC2
   - Use managed services, databases, serverless, etc !
 
-Well Architected Framework
-6 Pillars
+Well Architected Framework 6 Pillars
 
 - 1. Operational Excellence
 - 2. Security
@@ -688,7 +686,7 @@ Well Architected Framework
 
 They are not something to balance, or trade-offs, they’re a synergy
 
-1. Operational Excellence
+##### 1. Operational Excellence
 
 - Includes the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures
 - Design Principles
@@ -697,7 +695,7 @@ They are not something to balance, or trade-offs, they’re a synergy
   - Refine operations procedures frequently - And ensure that team members are familiar with it
   - Anticipate failure
   - Learn from all operational failures
-  - Use managed ser vices - to reduce operational burden
+  - Use managed services - to reduce operational burden
   - Implement observability for actionable insights - performance, reliability, cost...
 
 Operational Excellence AWS Services
@@ -709,7 +707,7 @@ Operational Excellence AWS Services
 - Evolve
   - AWS CloudFormation, AWS CodeBuild, AWS CodeCommit, AWS CodeDeploy, AWS CodePipeline
 
-2. Security
+##### 2. Security
 
 - Includes the ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies
 - Design Principles
@@ -725,21 +723,21 @@ Operational Excellence AWS Services
 Security AWS Services
 
 - Identity and Access Management
-  - IAM AWS-STS MFA token AWS Organizations
+  - IAM, AWS-STS, MFA token, AWS Organizations
 - Detective Controls
-  - AWS Config AWS CloudTrail Amazon CloudWatch
+  - AWS Config, AWS CloudTrail, Amazon CloudWatch
 - Infrastructure Protection
-  - Amazon CloudFront Amazon VPC AWS Shield AWS WAF Amazon Inspector
+  - Amazon CloudFront, Amazon VPC, AWS Shield, AWS WAF, Amazon Inspector
 - Data Protection
-  - KMS S3 Elastic Load Balancing (ELB) Amazon EBS Amazon RDS
+  - KMS, S3, Elastic Load Balancing (ELB), Amazon EBS, Amazon RDS
 - Incident Response
-  - IAM AWS CloudFormation Amazon CloudWatch Events
+  - IAM, AWS CloudFormation, Amazon CloudWatch Events
 
-3. Reliability
+##### 3. Reliability
 
 - Ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues
 - Design Principles
-  - Test recover y procedures - Use automation to simulate different failures or to recreate scenarios that led to failures before
+  - Test recovery procedures - Use automation to simulate different failures or to recreate scenarios that led to failures before
   - Automatically recover from failure - Anticipate and remediate failures before they occur
   - Scale horizontally to increase aggregate system availability - Distribute requests across multiple, smaller resources to ensure that they don't share a common point of failure
   - Stop guessing capacity - Maintain the optimal level to satisfy demand without over or under provisioning - Use Auto Scaling
@@ -754,15 +752,15 @@ Reliability AWS Services
 - Failure Management
   - Backups, AWS CloudFormation, Amazon S3 Glacier, Amazon S3, Amazon Route 53
 
-4. Performance Efficiency
+##### 4. Performance Efficiency
 
 - Includes the ability to use computing resources efficiently to meet system requirements, and to maintain that efficiency as demand changes and technologies evolve
 - Design Principles
-- Democratize advanced technologies - Advance technologies become services and hence you can focus more on product development
-- Go global in minutes - Easy deployment in multiple regions
-- Use serverless architectures - Avoid burden of managing servers
-- Experiment more often - Easy to carry out comparative testing
-- Mechanical sympathy - Be aware of all AWS services
+  - Democratize advanced technologies - Advance technologies become services and hence you can focus more on product development
+  - Go global in minutes - Easy deployment in multiple regions
+  - Use serverless architectures - Avoid burden of managing servers
+  - Experiment more often - Easy to carry out comparative testing
+  - Mechanical sympathy - Be aware of all AWS services
 
 Performance Efficiency AWS Services
 
@@ -775,7 +773,7 @@ Performance Efficiency AWS Services
 - Tradeoffs
   - Amazon RDS, Amazon ElastiCache, AWS Snowball, Amazon CloudFront
 
-5. Cost Optimization
+##### 5. Cost Optimization
 
 - Includes the ability to run systems to deliver business value at the lowest price point
 - Design Principles
@@ -783,7 +781,7 @@ Performance Efficiency AWS Services
   - Measure overall efficiency - Use CloudWatch
   - Stop spending money on data center operations - AWS does the infrastructure part and enables customer to focus on organization projects
   - Analyze and attribute expenditure - Accurate identification of system usage and costs, helps measure return on investment (ROI) - Make sure to use tags
-  - Use managed and application level ser vices to reduce cost of ownership - As managed services operate at cloud scale, they can offer a lower cost per transaction or service
+  - Use managed and application level services to reduce cost of ownership - As managed services operate at cloud scale, they can offer a lower cost per transaction or service
 
 Cost Optimization AWS Services
 
@@ -796,7 +794,7 @@ Cost Optimization AWS Services
 - Optimizing Over Time
   - AWS Trusted Advisor, AWS Cost and Usage Report
 
-6. Sustainability
+##### 6. Sustainability
 
 - The sustainability pillar focuses on minimizing the environmental impacts of running cloud workloads.
 - Design Principles
@@ -804,7 +802,7 @@ Cost Optimization AWS Services
   - Establish sustainability goals – Set long-term goals for each workload, model return on investment (ROI)
   - Maximize utilization – Right size each workload to maximize the energy efficiency of the underlying hardware and minimize idle resources.
   - Anticipate and adopt new, more efficient hardware and software offerings – and design for flexibility to adopt new technologies over time.
-  - Use managed ser vices – Shared services reduce the amount of infrastructure; Managed services help automate sustainability best practices as moving infrequent accessed data to cold storage and adjusting compute capacity.
+  - Use managed services – Shared services reduce the amount of infrastructure; Managed services help automate sustainability best practices as moving infrequent accessed data to cold storage and adjusting compute capacity.
   - Reduce the downstream impact of your cloud workloads – Reduce the amount of energy or resources required to use your services and reduce the need for your customers to upgrade their devices
 
 Sustainability AWS Services
@@ -816,7 +814,7 @@ Sustainability AWS Services
 - S3 Intelligent Tiering Data Lifecycle Manager
 - Read Local, Write Global: RDS Read Replicas, Aurora Global DB, DynamoDB Global Table, CloudFront
 
-AWS Well-Architected Tool
+##### AWS Well-Architected Tool
 
 - Free tool to review your architectures against the 6 pillars Well-Architected Framework and adopt architectural best practices
 - How does it work?
@@ -824,7 +822,7 @@ AWS Well-Architected Tool
   - Review your answers against the 6 pillars
   - Obtain advice: get videos and documentations, generate a report, see the results in a dashboard
 
-AWS Cloud Adoption Framework (AWS CAF)
+##### AWS Cloud Adoption Framework (AWS CAF)
 
 - Helps you build and then execute a comprehensive plan for your digital transformation through innovative use of AWS
 - Created by AWS Professionals by taking advantage of AWS Best Practices and lessons learned from 1000s of customers
@@ -861,18 +859,18 @@ AWS CAF – Transformation Phases
 - Launch – build and deliver pilot initiatives in production and demonstrate incremental business value
 - Scale – expand pilot initiatives to the desired scale while realizing the desired business benefits
 
-AWS Right Sizing
+##### AWS Right Sizing
 
 - EC2 has many instance types, but choosing the most powerful instance type isn’t the best choice, because the cloud is elastic
 - Right sizing is the process of matching instance types and sizes to your workload performance and capacity requirements at the lowest possible cost
-- Scaling up is easy so always star t small
+- Scaling up is easy so always start small
 - It’s also the process of looking at deployed instances and identifying opportunities to eliminate or downsize without compromising capacity or other requirements, which results in lower costs
 - It’s important to Right Size...
 - before a Cloud Migration
 - continuously after the cloud onboarding process (requirements change over time)
 - CloudWatch, Cost Explorer, Trusted Advisor, 3rd party tools can help
 
-AWS Marketplace
+##### AWS Marketplace
 
 - Digital catalog with thousands of software listings from independent software vendors (3rd party)
 - Example:
@@ -883,18 +881,18 @@ AWS Marketplace
 - If you buy through the AWS Marketplace, it goes into your AWS bill
 - You can sell your own solutions on the AWS Marketplace
 
-AWS re:Post
+##### AWS re:Post
 
-- AWS-managed Q&A ser vice offering crowd-sourced, expert-reviewed answers to your technical questions about AWS that replaces the original AWS Forums
+- AWS-managed Q&A service offering crowd-sourced, expert-reviewed answers to your technical questions about AWS that replaces the original AWS Forums
 - Part of the AWS Free Tier
 - Community members can earn reputation points to build up their community expert status by providing accepted answers and reviewing answers from other users
 - Questions from AWS Premium Support customers that do not receive a response from the community are passed on to AWS Support engineers
 - AWS re:Post is not intended to be used for questions that are time-sensitive or involve any proprietary information
 
-AWS Managed Services (AMS)
+##### AWS Managed Services (AMS)
 
 - Provides infrastructure and application support on AWS.
-- AMS offers a team of AWS exper ts who manage and operate your infrastructure for security, reliability, and availability
+- AMS offers a team of AWS experts who manage and operate your infrastructure for security, reliability, and availability
 - Helps organizations offload routine management tasks and focus on their business objectives.
 - Fully managed service, so AWS handles common activities such as change requests, monitoring, patch management, security, and backup services
 - Implements best practices and maintains your AWS infrastructure to reduce your operational overhead and risk
