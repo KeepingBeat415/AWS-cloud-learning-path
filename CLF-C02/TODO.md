@@ -28,3 +28,10 @@
 ~~17 - Advanced Identity Section~~
 ~~18 - Other AWS Services~~
 19 - AWS Architecting & Ecosystem Section
+
+---
+
+12/16/2024
+
+14 - Security & Compliance Section
+19 - AWS Architecting & Ecosystem Section
