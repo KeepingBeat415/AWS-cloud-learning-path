@@ -33,5 +33,5 @@
 
 12/16/2024
 
-14 - Security & Compliance Section
+~~14 - Security & Compliance Section~~
 19 - AWS Architecting & Ecosystem Section
