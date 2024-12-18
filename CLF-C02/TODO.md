@@ -35,3 +35,9 @@
 
 ~~14 - Security & Compliance Section~~
 19 - AWS Architecting & Ecosystem Section
+
+---
+
+12/18/2024
+~~16 - Account Management, Billing & Support Section~~
+19 - AWS Architecting & Ecosystem Section
