@@ -50,3 +50,9 @@ Q 35 40 42 47 59
 Q 62
 
 ~~16 - Account Management, Billing & Support Section >> 60%~~
+
+---
+
+12/20/2024
+~~19 - AWS Architecting & Ecosystem Section~~
+~~3. EC2 - Elastic Compute Cloud~~
