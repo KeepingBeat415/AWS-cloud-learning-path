@@ -56,3 +56,12 @@ Q 62
 12/20/2024
 ~~19 - AWS Architecting & Ecosystem Section~~
 ~~3. EC2 - Elastic Compute Cloud~~
+
+---
+
+12/21/2024
+Video
+~~03 - EC2 Section~~
+04 - EC2 Instance Storage Section
+05 - Elastic Load Balancing & Auto Scaling Groups Section
+06 - Amazon S3 Section
