@@ -62,6 +62,11 @@ Q 62
 12/21/2024
 Video
 ~~03 - EC2 Section~~
-04 - EC2 Instance Storage Section
-05 - Elastic Load Balancing & Auto Scaling Groups Section
-06 - Amazon S3 Section
+~~04 - EC2 Instance Storage Section~~
+~~05 - Elastic Load Balancing & Auto Scaling Groups Section~~
+
+12/24/2024
+~~06 - Amazon S3 Section~~
+07 - Databases Section
+08 - Other Compute Section
+09 - Deploying and Managing Infrastructure at Scale Section
