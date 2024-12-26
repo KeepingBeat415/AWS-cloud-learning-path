@@ -67,6 +67,7 @@ Video
 
 12/24/2024
 ~~06 - Amazon S3 Section~~
-07 - Databases Section
-08 - Other Compute Section
-09 - Deploying and Managing Infrastructure at Scale Section
+~~07 - Databases Section~~
+~~08 - Other Compute Section~~
+~~09 - Deploying and Managing Infrastructure at Scale Section~~
+10 - Global Infrastructure Section
