@@ -70,4 +70,20 @@ Video
 ~~07 - Databases Section~~
 ~~08 - Other Compute Section~~
 ~~09 - Deploying and Managing Infrastructure at Scale Section~~
-10 - Global Infrastructure Section
+
+12/25/2024
+
+~~10 - Global Infrastructure Section~~
+
+12/27/2024
+
+~~11 - Cloud Integration Section~~
+~~12 - Cloud Monitoring Section~~
+13 - VPC Section
+14 - Security & Compliance Section
+15 - Machine Learning Section
+16 - Account Management, Billing & Support Section
+
+17 - Advanced Identity Section
+18 - Other AWS Services
+19 - AWS Architecting & Ecosystem Section
