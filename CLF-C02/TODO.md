@@ -79,8 +79,11 @@ Video
 
 ~~11 - Cloud Integration Section~~
 ~~12 - Cloud Monitoring Section~~
-13 - VPC Section
-14 - Security & Compliance Section
+
+12/28/2024
+
+~~13 - VPC Section~~
+~~14 - Security & Compliance Section~~
 15 - Machine Learning Section
 16 - Account Management, Billing & Support Section
 
