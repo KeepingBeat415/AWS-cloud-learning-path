@@ -84,9 +84,14 @@ Video
 
 ~~13 - VPC Section~~
 ~~14 - Security & Compliance Section~~
-15 - Machine Learning Section
-16 - Account Management, Billing & Support Section
+~~15 - Machine Learning Section~~
 
-17 - Advanced Identity Section
-18 - Other AWS Services
+12/28/2024
+
+~~16 - Account Management, Billing & Support Section~~
+~~17 - Advanced Identity Section~~
+~~18 - Other AWS Services~~
+
+12/29/2024
+
 19 - AWS Architecting & Ecosystem Section
