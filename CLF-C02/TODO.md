@@ -96,4 +96,4 @@ Video
 
 12/31/2024
 
-19 - AWS Architecting & Ecosystem Section
+~~19 - AWS Architecting & Ecosystem Section~~
